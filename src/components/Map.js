@@ -55,7 +55,6 @@ export default class HereMap extends Component {
 
 		careProvider.map((place) => {
 			const stub = stubData[Math.floor(Math.random()*10)];
-			console.log(Math.floor(Math.random()*10))
 			try {
 					this.addMarkerToGroup({ groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
 						<div style="font-family:'PT Sans', sans-serif">
