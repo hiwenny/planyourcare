@@ -19,11 +19,26 @@ export default class HereMap extends Component {
 		const behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(map));
 		const ui = window.H.ui.UI.createDefault(map, defaultLayers);
 
-		const geocoder = window.platform.getGeocodingService();
+		const group = new window.H.map.Group();
+		map.addObject(group);
+
+		// add 'tap' event listener, that opens info bubble, to the group
+		group.addEventListener('tap', function (evt) {
+			// event target is the marker itself, group is a parent event target
+			// for all objects that it contains
+			var bubble =  new window.H.ui.InfoBubble(evt.target.getPosition(), {
+				// read custom data
+				content: evt.target.getData()
+			});
+			// show info bubble
+			ui.addBubble(bubble);
+		}, false);
+
 		careProvider.map( (place) => {
-			place.LATITUDE && place.LONGITUDE &&
-			this.addMarkersToMap({mapTarget: map, lat: place.LATITUDE, lng: place.LONGITUDE}) 
+			return place.LATITUDE && place.LONGITUDE &&
+			this.addMarkerToGroup({groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: '<div>hello</div>'}) 
 		});
+
 	}
 
 	initializeCredential = () => {
@@ -33,9 +48,10 @@ export default class HereMap extends Component {
 		});
 	}
 
-	addMarkersToMap({mapTarget, lat, lng}) {
+	addMarkerToGroup({groupTarget, lat, lng, contentsHTML}) {
 		const marker = new window.H.map.Marker({lat:lat, lng:lng});
-		mapTarget.addObject(marker);
+		marker.setData(contentsHTML);
+		groupTarget.addObject(marker);
 	}
 
 	render() {
