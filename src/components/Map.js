@@ -31,9 +31,7 @@ export default class HereMap extends Component {
 		this.map.addObject(group);
 
 		// add 'tap' event listener, that opens info bubble, to the group
-		group.addEventListener('tap', function (evt) {
-			// event target is the marker itself, group is a parent event target
-			// for all objects that it contains
+		group.addEventListener('tap', (evt) => {
 			var bubble = new window.H.ui.InfoBubble(evt.target.getPosition(), {
 				// read custom data
 				content: evt.target.getData()
@@ -43,8 +41,25 @@ export default class HereMap extends Component {
 		}, false);
 
 		careProvider.map((place) => {
-			return place.LATITUDE && place.LONGITUDE &&
-				this.addMarkerToGroup({ groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: '<div>hello</div>' })
+			const stubData = [
+				{availability: 31}, 
+				{availability: 2}, 
+				{availability: 16}, 
+				{availability: 4},
+				{availability: 8}, 
+				{availability: 22}
+			]
+			
+			try {
+					this.addMarkerToGroup({ groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
+						<div style="font-family:'PT Sans', sans-serif">
+							<span>${place.PROVIDER_NAME}</span>
+							<span style="font-size:1rem">Availability: ${stubData[0].availability}</span>
+						</div>` 
+				});
+			} catch (e) {
+				console.log(e);
+			}
 		});
 	}
 
