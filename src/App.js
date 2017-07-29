@@ -19,7 +19,9 @@ class App extends Component {
     return (
       <div className='container'>
         <Header />
-        <HereMap />
+        <main className='content'>
+          <HereMap />
+        </main>
       </div>
     )
   }
