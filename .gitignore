@@ -19,3 +19,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# python files
+*/.ipynb_checkpoints
+
+# large files
+*/raw_files

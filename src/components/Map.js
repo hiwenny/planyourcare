@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import interpolate from 'color-interpolate';
-import mapFile from './mapFile.json';
+// import mapFile from './mapFile.json';
+import mapFile from '../data/nswFiltered.json';
 import careProvider from '../data/careProvider.json';
 
 export default class HereMap extends Component {
@@ -52,10 +53,14 @@ export default class HereMap extends Component {
 		const { features } = mapFile;
 		const coordinates = features.map((feature) => {
 			const { geometry: { coordinates } } = feature
-			return coordinates[0]
+			return coordinates.length && coordinates[0].length && coordinates[0][0]
 		})
 
 		coordinates.forEach((coordPairs, index) => {
+			if (!coordPairs) {
+				return
+			}
+
 			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(120, 120, 120, 0.5)']);
 			this.addBoundary(coordPairs, colormap(index / coordinates.length))
 		})
@@ -64,8 +69,8 @@ export default class HereMap extends Component {
 	addBoundary = (coordPairs, backgroundColor) => {
 		var geoStrip = new window.H.geo.Strip();
 
-		coordPairs.forEach((flatCoord) => {
-			geoStrip.pushLatLngAlt(flatCoord[1], flatCoord[0], 0)
+		coordPairs.forEach((pair) => {
+			geoStrip.pushLatLngAlt(pair[1], pair[0], 0)
 		})
 
 		this.map.addObject(
