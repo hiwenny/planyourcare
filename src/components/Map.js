@@ -93,10 +93,14 @@ export default class HereMap extends Component {
 				coors.push(c);
 			} else if (type === 'MultiPolygon') {
 				// console.log('C2', c);
-				let concatenated = [].concat(...coordinates)
-				concatenated = [].concat(...concatenated)
-				console.log('CONCATENATED', concatenated);
-				coors.push(concatenated)
+				coordinates.forEach((c2) => {
+					const flatten = [].concat(...c2)
+					coors.push(flatten)
+				})
+				// let concatenated = [].concat(...coordinates)
+				// concatenated = [].concat(...concatenated)
+				// console.log('CONCATENATED', concatenated);
+				// coors.push(concatenated)
 				// c.forEach((c2) => {
 				// 	coors.push(c2);
 				// });
