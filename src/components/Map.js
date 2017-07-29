@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import interpolate from 'color-interpolate';
 // import mapFile from './mapFile.json';
-import mapFile from '../data/nsw2_optimized.json';
+// import mapFile from '../data/nsw2_optimized.json';
+import mapFile from '../data/nsw2_opt1.json';
 import careProvider from '../data/careProvider.json';
 
 export default class HereMap extends Component {
