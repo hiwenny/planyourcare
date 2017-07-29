@@ -12,9 +12,12 @@ export default class HereMap extends Component {
 			document.getElementById('mapContainer'),
 			defaultLayers.normal.map,
 			{
-				zoom: 10,
-				center: { lat: 52.5, lng: 13.4 }
+				zoom: 14,
+				center: { lat: -33.8688, lng: 151.2093 }
 			});
+
+		const behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(map));
+		const ui = window.H.ui.UI.createDefault(map, defaultLayers);
 	}
 
 	initializeCredential = () => {
