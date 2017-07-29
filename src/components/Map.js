@@ -27,6 +27,19 @@ export default class HereMap extends Component {
 	}
 
 	addMarkers = () => {
+		const stubData = [
+			{availability: 31},
+			{availability: 47},
+			{availability: 16},
+			{availability: 44},
+			{availability: 36},
+			{availability: 22},
+			{availability: 10},
+			{availability: 62},
+			{availability: 53},
+			{availability: 69}
+
+		];
 		const group = new window.H.map.Group();
 		this.map.addObject(group);
 
@@ -41,20 +54,13 @@ export default class HereMap extends Component {
 		}, false);
 
 		careProvider.map((place) => {
-			const stubData = [
-				{availability: 31}, 
-				{availability: 2}, 
-				{availability: 16}, 
-				{availability: 4},
-				{availability: 8}, 
-				{availability: 22}
-			]
-			
+			const stub = stubData[Math.floor(Math.random()*10)];
+			console.log(Math.floor(Math.random()*10))
 			try {
 					this.addMarkerToGroup({ groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
 						<div style="font-family:'PT Sans', sans-serif">
 							<span>${place.PROVIDER_NAME}</span>
-							<span style="font-size:1rem">Availability: ${stubData[0].availability}</span>
+							<span style="font-size:1rem">Availability: ${stub.availability}</span>
 						</div>` 
 				});
 			} catch (e) {
