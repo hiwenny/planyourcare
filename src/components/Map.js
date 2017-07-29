@@ -63,7 +63,6 @@ export default class HereMap extends Component {
 		var geoStrip = new window.H.geo.Strip();
 
 		coordPairs.forEach((flatCoord) => {
-			console.log('ADDING SOMETHING', flatCoord[0], flatCoord[1], 0);
 			geoStrip.pushLatLngAlt(flatCoord[1], flatCoord[0], 0)
 		})
 
