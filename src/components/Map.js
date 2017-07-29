@@ -20,7 +20,6 @@ export default class HereMap extends Component {
 		const behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(this.map));
 		const ui = window.H.ui.UI.createDefault(this.map, defaultLayers);
 
-		// this.addPolygonToMap(this.map);
 		this.addBoundaries();
 	}
 
@@ -34,27 +33,6 @@ export default class HereMap extends Component {
 		coordinates.forEach((coordPairs) => {
 			this.addBoundary(coordPairs)
 		})
-	}
-
-	addPolygonToMap() {
-		var geoStrip = new window.H.geo.Strip();
-
-		geoStrip.pushLatLngAlt(-33.86941783182514, 151.2341022491455, 0)
-		geoStrip.pushLatLngAlt(-33.88580745357738, 151.22629165649414, 0)
-		geoStrip.pushLatLngAlt(-33.8907949744997, 151.2414836883545, 0)
-
-		geoStrip.pushLatLngAlt(-33.880748384475496, 151.252384185791, 0)
-		geoStrip.pushLatLngAlt(-33.868348834116695, 151.24431610107422, 0)
-		geoStrip.pushLatLngAlt(-33.86941783182514, 151.2341022491455, 0)
-		this.map.addObject(
-			new window.H.map.Polygon(geoStrip, {
-				style: {
-					fillColor: '#FFFFCC',
-					strokeColor: '#829',
-					lineWidth: 1
-				}
-			})
-		);
 	}
 
 	addBoundary = (coordPairs) => {
