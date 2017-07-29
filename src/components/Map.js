@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import mapFile from './mapFile.json'
-import careProvider from '../data/careProvider.json'
+import React, { Component } from 'react';
+import interpolate from 'color-interpolate';
+import mapFile from './mapFile.json';
+import careProvider from '../data/careProvider.json';
 
 export default class HereMap extends Component {
 	componentDidMount() {
@@ -54,12 +55,13 @@ export default class HereMap extends Component {
 			return coordinates[0]
 		})
 
-		coordinates.forEach((coordPairs) => {
-			this.addBoundary(coordPairs)
+		coordinates.forEach((coordPairs, index) => {
+			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(120, 120, 120, 0.5)']);
+			this.addBoundary(coordPairs, colormap(index / coordinates.length))
 		})
 	}
 
-	addBoundary = (coordPairs) => {
+	addBoundary = (coordPairs, backgroundColor) => {
 		var geoStrip = new window.H.geo.Strip();
 
 		coordPairs.forEach((flatCoord) => {
@@ -69,7 +71,7 @@ export default class HereMap extends Component {
 		this.map.addObject(
 			new window.H.map.Polygon(geoStrip, {
 				style: {
-					fillColor: 'rgba(0, 85, 170, 0.4)',
+					fillColor: backgroundColor,
 					strokeColor: '#fff',
 					lineWidth: 1
 				}
