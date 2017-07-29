@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import interpolate from 'color-interpolate';
 // import mapFile from './mapFile.json';
-import mapFile from '../data/nswFiltered.json';
+import mapFile from '../data/nsw2_optimized.json';
 import careProvider from '../data/careProvider.json';
 
 export default class HereMap extends Component {
@@ -20,7 +20,7 @@ export default class HereMap extends Component {
 				center: { lat: -33.8688, lng: 151.2093 }
 			});
 
-		const behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(this.map));
+		this.behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(this.map));
 		this.ui = window.H.ui.UI.createDefault(this.map, defaultLayers);
 
 		this.addBoundaries();
@@ -29,16 +29,16 @@ export default class HereMap extends Component {
 
 	addMarkers = () => {
 		const stubData = [
-			{availability: 31},
-			{availability: 47},
-			{availability: 16},
-			{availability: 44},
-			{availability: 36},
-			{availability: 22},
-			{availability: 10},
-			{availability: 62},
-			{availability: 53},
-			{availability: 69}
+			{ availability: 31 },
+			{ availability: 47 },
+			{ availability: 16 },
+			{ availability: 44 },
+			{ availability: 36 },
+			{ availability: 22 },
+			{ availability: 10 },
+			{ availability: 62 },
+			{ availability: 53 },
+			{ availability: 69 }
 
 		];
 		const group = new window.H.map.Group();
@@ -55,13 +55,14 @@ export default class HereMap extends Component {
 		}, false);
 
 		careProvider.map((place) => {
-			const stub = stubData[Math.floor(Math.random()*10)];
+			const stub = stubData[Math.floor(Math.random() * 10)];
 			try {
-					this.addMarkerToGroup({ groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
+				this.addMarkerToGroup({
+					groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
 						<div style="font-family:'PT Sans', sans-serif">
 							<span>${place.PROVIDER_NAME}</span>
 							<span style="font-size:1rem">Availability: ${stub.availability}</span>
-						</div>` 
+						</div>`
 				});
 			} catch (e) {
 				console.log(e);
@@ -71,18 +72,48 @@ export default class HereMap extends Component {
 
 	addBoundaries = () => {
 		const { features } = mapFile;
-		const coordinates = features.map((feature) => {
-			const { geometry: { coordinates } } = feature
-			return coordinates.length && coordinates[0].length && coordinates[0][0]
+		// console.log('FEATUREs', features);
+		let coors = []
+		features.forEach((feature) => {
+			let { geometry = {}, properties } = feature
+			if (geometry === null) {
+				console.log('FEATURE', feature);
+				geometry = {}
+			}
+			const { coordinates, type } = geometry
+			if (typeof type === 'undefined') {
+				console.log('type is undefined');
+				return
+			}
+
+			console.log('PROPERTIES', properties.SA3_NAME16);
+			if (type === 'Polygon') {
+				const c = coordinates && coordinates.length && coordinates[0];
+				console.log('C', c);
+				coors.push(c);
+			} else if (type === 'MultiPolygon') {
+				// console.log('C2', c);
+				let concatenated = [].concat(...coordinates)
+				concatenated = [].concat(...concatenated)
+				console.log('CONCATENATED', concatenated);
+				coors.push(concatenated)
+				// c.forEach((c2) => {
+				// 	coors.push(c2);
+				// });
+			}
+			console.log('Coors', coors);
+
 		})
 
-		coordinates.forEach((coordPairs, index) => {
+		console.log('COORS LENGTH', coors.length);
+
+		coors.forEach((coordPairs, index) => {
 			if (!coordPairs) {
 				return
 			}
 
 			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(120, 120, 120, 0.5)']);
-			this.addBoundary(coordPairs, colormap(index / coordinates.length))
+			this.addBoundary(coordPairs, colormap(index / coors.length))
 		})
 	}
 
@@ -90,6 +121,7 @@ export default class HereMap extends Component {
 		var geoStrip = new window.H.geo.Strip();
 
 		coordPairs.forEach((pair) => {
+			// console.log('ADDING COORDPAIRS', pair);
 			geoStrip.pushLatLngAlt(pair[1], pair[0], 0)
 		})
 
