@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { StatelessComponentwithProps } from './components'
+import HereMap from './components/Map'
 import { sampleAction } from './actions/app'
 import './scss/index.scss'
 
@@ -15,13 +15,9 @@ class App extends Component {
   }
 
   render() {
-    const { sampleState } = this.props;
     return (
-      <div className='container'>
-        <div className='display-text'><code>{sampleState}</code></div>
-        {
-          ['Button 1', 'Button 2'].map((val, i) => <StatelessComponentwithProps key={i} label={val} onClick={this.sampleFunction} />)
-        }
+      <div className='container' style={{height: '100vh', width: '100vw'}}>
+        <HereMap />
       </div>
     )
   }
