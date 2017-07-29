@@ -2,6 +2,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    height: 100vh;
+    width: 100vw;
     .display-text {
         width: 100%;
         text-align: center;
@@ -20,4 +22,5 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }

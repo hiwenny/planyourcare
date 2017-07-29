@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import Header from './components/Header'
 import HereMap from './components/Map'
 import { sampleAction } from './actions/app'
 import './scss/index.scss'
@@ -16,7 +17,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className='container' style={{height: '100vh', width: '100vw'}}>
+      <div className='container'>
+        <Header />
         <HereMap />
       </div>
     )
