@@ -19,33 +19,19 @@ const createOptionsFromJSON = (keyName, valueName) => {
     return options;
 }
 
-const regionScaleBy = {
-    POP_CHILD: 'POP_CHILD',
-    AVAILIBILITY: 'AVAILIBILITY',
-    INCOME_DAY: 'INCOME_DAY',
-    SERVICE_CENTER: 'SERVICE_CENTER',
-    FEE_DAY: 'FEE_DAY',
-}
-
 const years = createOptionsFromJSON('YEAR');
 const yearsFilter = createFilterOptions({ options: years });
 
 const locations = createOptionsFromJSON('SA3_name');
 const locationsFilter = createFilterOptions({ options: locations });
 
-// FOR FILTERING COLORS
-const scaleSmallestLargest = {}
-const createSmallestLargest = (numbers) => {
-    return {
-        smallest: Math.min(...numbers),
-        largest: Math.max(...numbers),
-    }
-}
-
-Object.values(regionScaleBy).forEach((val) => {
-    const numbers = SA3.map(x => x[val])
-    scaleSmallestLargest[val] = createSmallestLargest(numbers)
-})
+const regionScaleBy = {
+    POP_CHILD: 'POP_CHILD',
+    AVAILIBILITY: 'AVAILIBILITY',
+    INCOME_DAY: 'INCOME_DAY',
+    SERVICE_CENTER: 'SERVICE_CENTER',
+    FEE_DAY: 'FEE_DAY',
+};
 
 const scaleBy = [
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
@@ -53,7 +39,7 @@ const scaleBy = [
     { value: regionScaleBy.SERVICE_CENTER, label: 'Number of Childcare centre' },
     { value: regionScaleBy.FEE_DAY, label: 'Average fee by day' },
     { value: regionScaleBy.INCOME_DAY, label: 'Household Income per day' },
-]
+];
 
 function logChange(val) {
     console.log("Selected: " + JSON.stringify(val));
