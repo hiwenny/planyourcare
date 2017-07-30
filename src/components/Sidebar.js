@@ -110,9 +110,9 @@ class Sidebar extends React.Component {
         const { suburb, year, budget, days, quality } = this.props;
         return (
             <aside className='sidebar'>
-                <section className='sidebar__section section-region'>
+                <section className="sidebar__section section-region">
                     <label>
-                        <h3>Year:</h3>
+                        <h2>Year:</h2>
                         <VirtualizedSelect
                             autoBlur={true}
                             clearable={false}
@@ -124,6 +124,9 @@ class Sidebar extends React.Component {
                             placeholder='Select year...'
                         />
                     </label>
+                </section>
+                <section className='sidebar__section section-region'>
+                    <h2>Region</h2>
                     <label>
                         <h3>Scale by:</h3>
                         <VirtualizedSelect
@@ -138,21 +141,9 @@ class Sidebar extends React.Component {
                     </label>
                 </section>
                 <section className='sidebar__section section-childcare'>
+                    <h2>Childcare</h2>
                     <label>
-                        <h3>Location:</h3>
-                        <VirtualizedSelect
-                            autoBlur={true}
-                            clearable={false}
-                            name="location"
-                            value={suburb}
-                            filterOptions={locationsFilter}
-                            options={locationsList}
-                            onChange={this.selectLocation}
-                            placeholder='Select location...'
-                        />
-                    </label>
-                    <label>
-                        <h3>Budget:</h3>
+                        <h3>Budget per week:</h3>
                         <VirtualizedSelect
                             autoBlur={true}
                             clearable={false}
@@ -188,6 +179,19 @@ class Sidebar extends React.Component {
                             options={qualityList}
                             onChange={this.handleQualityChange}
                             placeholder='Set quality...'
+                        />
+                    </label>
+                    <label>
+                        <h3>Location:</h3>
+                        <VirtualizedSelect
+                            autoBlur={true}
+                            clearable={false}
+                            name="location"
+                            value={suburb}
+                            filterOptions={locationsFilter}
+                            options={locationsList}
+                            onChange={this.selectLocation}
+                            placeholder='Select location...'
                         />
                     </label>
                 </section>
