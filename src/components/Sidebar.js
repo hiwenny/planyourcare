@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { updateSuburb, updateCapacity, updateBudget, updateScaleBy, updateYear } from '../actions/app';
+import { updateSuburb, updateCapacity, updateBudget, updateScaleBy, updateYear, updateDays, updateQuality } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
@@ -115,7 +115,9 @@ function mapStateToProps(store) {
         capacity: store.app.capacity,
         budget: store.app.budget,
         scaleBy: store.app.scaleBy,
-        year: store.app.year
+        year: store.app.year,
+        days: store.app.days,
+        quality: store.app.quality,
     }
 }
 
@@ -123,13 +125,19 @@ const mapDispatchToProps = {
     updateScaleByDispatch: updateScaleBy,
     updateYearDispatch: updateYear,
     updateSuburbDispatch: updateSuburb,
+    updateCapacityDispatch: updateCapacity,
+    updateBudgetDispatch: updateBudget,
+    updateDaysDispatch: updateDays, 
+    updateQualityDispatch: updateQuality
 }
 
 Sidebar.defaultProps = {
     suburb: 'Sydney Inner City',
-    capacity: 0,
-    budget: 0,
-    year: 2016
+    capacity: 1000,
+    budget: 1000,
+    year: 2016,
+    days: 5,
+    quality: 0
 }
 
 Sidebar.propTypes = {
@@ -137,6 +145,8 @@ Sidebar.propTypes = {
     capacity: PropTypes.number,
     budget: PropTypes.number,
     year: PropTypes.number,
+    days: PropTypes.number,
+    quality: PropTypes.number,
     dispatch: PropTypes.func,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
