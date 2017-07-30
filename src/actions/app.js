@@ -34,3 +34,17 @@ export function updateYear(year) {
     year: year
   }
 }
+
+export function updateDays(days) {
+  return {
+    type: actionTypes.UPDATE_DAYS,
+    days: days
+  }
+}
+
+export function updateQuality(quality) {
+  return {
+    type: actionTypes.UPDATE_QUALITY,
+    quality: quality
+  }
+}

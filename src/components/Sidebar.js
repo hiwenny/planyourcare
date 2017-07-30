@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { updateSuburb, updateCapacity, updateBudget, updateScaleBy, updateYear } from '../actions/app';
+import { updateSuburb, updateCapacity, updateBudget, updateScaleBy, updateYear, updateDays, updateQuality } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
@@ -23,11 +23,36 @@ const createOptionsFromJSON = (keyName, valueName) => {
     return options;
 }
 
-const years = createOptionsFromJSON('YEAR');
-const yearsFilter = createFilterOptions({ options: years });
+const yearsList = createOptionsFromJSON('YEAR');
+const yearsFilter = createFilterOptions({ options: yearsList });
 
-const locations = createOptionsFromJSON('SA3_name');
-const locationsFilter = createFilterOptions({ options: locations });
+const locationsList = createOptionsFromJSON('SA3_name');
+const locationsFilter = createFilterOptions({ options: locationsList });
+
+const budgetsList = [
+    {value: 50, label: 50},
+    {value: 100, label: 100},
+    {value: 150, label: 150},
+    {value: 200, label: 200},
+    {value: 250, label: 250},
+    {value: 300, label: 300},
+    {value: 350, label: 350},
+    {value: 400, label: 400},
+    {value: 450, label: 450},
+    {value: 500, label: 500},
+    {value: 550, label: 550},
+    {value: 600, label: 600}
+];
+const budgetsFilter = createFilterOptions({ options: locationsList });
+
+const qualityList = [
+    {value: 1, label: 1},
+    {value: 2, label: 2},
+    {value: 3, label: 3},
+    {value: 4, label: 4},
+    {value: 5, label: 5},
+];
+const qualityFilter = createFilterOptions({ options: qualityList });
 
 const scaleBy = [
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
@@ -43,15 +68,27 @@ const scaleBy = [
 
 class Sidebar extends React.Component {
     handleScaleByChange = (val) => {
-        this.props.updateScaleByDispatch(val.value);
+        return this.props.updateScaleByDispatch(val.value);
     }
 
     handleYearChange = (val) => {
-        this.props.updateYearDispatch(val.value);
+        return this.props.updateYearDispatch(val.value);
     }
 
     selectLocation = (val) => {
         return this.props.updateSuburbDispatch(val.value);
+    }
+
+    handleBudgetChange = (val) => {
+        return this.props.updateBudgetDispatch(val.value);
+    }
+
+    handleDaysChange = (val) => {
+        return this.props.updateDaysDispatch(val.value);
+    }
+
+    handleQualityChange = (val) => {
+        return this.props.updateQualityDispatch(val.value);
     }
 
     logChange = (val) => {
@@ -59,7 +96,7 @@ class Sidebar extends React.Component {
     }
 
     render() {
-        const { suburb, year } = this.props;
+        const { suburb, year, budget, days, quality } = this.props;
         return (
             <aside className='sidebar'>
                 <section className='sidebar__section section-region'>
@@ -71,7 +108,7 @@ class Sidebar extends React.Component {
                             name="year"
                             value={this.props.year}
                             filterOptions={yearsFilter}
-                            options={years}
+                            options={yearsList}
                             onChange={this.handleYearChange}
                             placeholder='Select year...'
                         />
@@ -98,9 +135,35 @@ class Sidebar extends React.Component {
                             name="location"
                             value={suburb}
                             filterOptions={locationsFilter}
-                            options={locations}
+                            options={locationsList}
                             onChange={this.selectLocation}
-                            placeholder='Select locations...'
+                            placeholder='Select location...'
+                        />
+                    </label>
+                    <label>
+                        <h3>Budget:</h3>
+                        <VirtualizedSelect
+                            autoBlur={true}
+                            clearable={false}
+                            name="budget"
+                            value={budget}
+                            filterOptions={budgetsFilter}
+                            options={budgetsList}
+                            onChange={this.handleBudgetChange}
+                            placeholder='Set budget...'
+                        />
+                    </label>
+                    <label>
+                        <h3>Min. Quality:</h3>
+                        <VirtualizedSelect
+                            autoBlur={true}
+                            clearable={false}
+                            name="quality"
+                            value={quality}
+                            filterOptions={qualityFilter}
+                            options={qualityList}
+                            onChange={this.handleQualityChange}
+                            placeholder='Set quality...'
                         />
                     </label>
                 </section>
@@ -115,7 +178,9 @@ function mapStateToProps(store) {
         capacity: store.app.capacity,
         budget: store.app.budget,
         scaleBy: store.app.scaleBy,
-        year: store.app.year
+        year: store.app.year,
+        days: store.app.days,
+        quality: store.app.quality,
     }
 }
 
@@ -123,13 +188,19 @@ const mapDispatchToProps = {
     updateScaleByDispatch: updateScaleBy,
     updateYearDispatch: updateYear,
     updateSuburbDispatch: updateSuburb,
+    updateCapacityDispatch: updateCapacity,
+    updateBudgetDispatch: updateBudget,
+    updateDaysDispatch: updateDays, 
+    updateQualityDispatch: updateQuality
 }
 
 Sidebar.defaultProps = {
     suburb: 'Sydney Inner City',
-    capacity: 0,
-    budget: 0,
-    year: 2016
+    capacity: 1000,
+    budget: 1000,
+    year: 2016,
+    days: 5,
+    quality: 0
 }
 
 Sidebar.propTypes = {
@@ -137,6 +208,8 @@ Sidebar.propTypes = {
     capacity: PropTypes.number,
     budget: PropTypes.number,
     year: PropTypes.number,
+    days: PropTypes.number,
+    quality: PropTypes.number,
     dispatch: PropTypes.func,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
