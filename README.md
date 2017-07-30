@@ -2,6 +2,12 @@ Project for Govhack Australia 2017
 
 planyourcare.tech
 
+Project Description
+===================
+We are aiming to understand ideal locations for childcare based ideal locations. We present this analysis as an interactive map for users to interrogate the underlying data. The audience for this data includes, parents understanding vacancies and prices, childcare providers to review population forecasts and existing prices, goverment to understand and project the effect of the implementation of Child Care Benefit in 1 July 2018 and proposed State Environmental Planning Policy changes.
+
+The data for this presentation comes from a combination of government datasets and geo datasets.
+
 APIs used
 * https://here.com/en (mapping)
 
