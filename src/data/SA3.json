@@ -1,0 +1,1382 @@
+[
+  {
+    "SA3_code": 10201,
+    "SA3_name": "Gosford",
+    "YEAR": 2016,
+    "POP_CHILD": 10624,
+    "AVAILIBILITY": 6850,
+    "SERVICE_CENTER": 70,
+    "FEE_DAY": 66,
+    "INCOME_DAY": 338
+  },
+  {
+    "SA3_code": 10202,
+    "SA3_name": "Wyong",
+    "YEAR": 2016,
+    "POP_CHILD": 10820,
+    "AVAILIBILITY": 6140,
+    "SERVICE_CENTER": 56,
+    "FEE_DAY": 64.4,
+    "INCOME_DAY": 290
+  },
+  {
+    "SA3_code": 11501,
+    "SA3_name": "Baulkham Hills",
+    "YEAR": 2016,
+    "POP_CHILD": 9197,
+    "AVAILIBILITY": 7090,
+    "SERVICE_CENTER": 74,
+    "FEE_DAY": 78.8,
+    "INCOME_DAY": 494
+  },
+  {
+    "SA3_code": 11502,
+    "SA3_name": "Dural - Wisemans Ferry",
+    "YEAR": 2016,
+    "POP_CHILD": 1319,
+    "AVAILIBILITY": 1010,
+    "SERVICE_CENTER": 14,
+    "FEE_DAY": 74.4,
+    "INCOME_DAY": 462
+  },
+  {
+    "SA3_code": 11503,
+    "SA3_name": "Hawkesbury",
+    "YEAR": 2016,
+    "POP_CHILD": 1529,
+    "AVAILIBILITY": 550,
+    "SERVICE_CENTER": 6,
+    "FEE_DAY": 66,
+    "INCOME_DAY": 408
+  },
+  {
+    "SA3_code": 11504,
+    "SA3_name": "Rouse Hill - McGraths Hill",
+    "YEAR": 2016,
+    "POP_CHILD": 2550,
+    "AVAILIBILITY": 2560,
+    "SERVICE_CENTER": 21,
+    "FEE_DAY": 69.6,
+    "INCOME_DAY": 491
+  },
+  {
+    "SA3_code": 11601,
+    "SA3_name": "Blacktown",
+    "YEAR": 2016,
+    "POP_CHILD": 10679,
+    "AVAILIBILITY": 5120,
+    "SERVICE_CENTER": 63,
+    "FEE_DAY": 63.6,
+    "INCOME_DAY": 345
+  },
+  {
+    "SA3_code": 11602,
+    "SA3_name": "Blacktown - North",
+    "YEAR": 2016,
+    "POP_CHILD": 8872,
+    "AVAILIBILITY": 3570,
+    "SERVICE_CENTER": 36,
+    "FEE_DAY": 68.8,
+    "INCOME_DAY": 461
+  },
+  {
+    "SA3_code": 11603,
+    "SA3_name": "Mount Druitt",
+    "YEAR": 2016,
+    "POP_CHILD": 10176,
+    "AVAILIBILITY": 4200,
+    "SERVICE_CENTER": 43,
+    "FEE_DAY": 60,
+    "INCOME_DAY": 302
+  },
+  {
+    "SA3_code": 11701,
+    "SA3_name": "Botany",
+    "YEAR": 2016,
+    "POP_CHILD": 3276,
+    "AVAILIBILITY": 1720,
+    "SERVICE_CENTER": 18,
+    "FEE_DAY": 78,
+    "INCOME_DAY": 384
+  },
+  {
+    "SA3_code": 11702,
+    "SA3_name": "Marrickville - Sydenham - Petersham",
+    "YEAR": 2016,
+    "POP_CHILD": 3846,
+    "AVAILIBILITY": 1880,
+    "SERVICE_CENTER": 19,
+    "FEE_DAY": 86,
+    "INCOME_DAY": 462
+  },
+  {
+    "SA3_code": 11703,
+    "SA3_name": "Sydney Inner City",
+    "YEAR": 2016,
+    "POP_CHILD": 8960,
+    "AVAILIBILITY": 8330,
+    "SERVICE_CENTER": 96,
+    "FEE_DAY": 100.4,
+    "INCOME_DAY": 505
+  },
+  {
+    "SA3_code": 11801,
+    "SA3_name": "Eastern Suburbs - North",
+    "YEAR": 2016,
+    "POP_CHILD": 8765,
+    "AVAILIBILITY": 5210,
+    "SERVICE_CENTER": 70,
+    "FEE_DAY": 108.8,
+    "INCOME_DAY": 649
+  },
+  {
+    "SA3_code": 11802,
+    "SA3_name": "Eastern Suburbs - South",
+    "YEAR": 2016,
+    "POP_CHILD": 9556,
+    "AVAILIBILITY": 4620,
+    "SERVICE_CENTER": 58,
+    "FEE_DAY": 94.8,
+    "INCOME_DAY": 484
+  },
+  {
+    "SA3_code": 11901,
+    "SA3_name": "Bankstown",
+    "YEAR": 2016,
+    "POP_CHILD": 14169,
+    "AVAILIBILITY": 6720,
+    "SERVICE_CENTER": 88,
+    "FEE_DAY": 65.6,
+    "INCOME_DAY": 297
+  },
+  {
+    "SA3_code": 11902,
+    "SA3_name": "Canterbury",
+    "YEAR": 2016,
+    "POP_CHILD": 11416,
+    "AVAILIBILITY": 5010,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 66,
+    "INCOME_DAY": 274
+  },
+  {
+    "SA3_code": 11903,
+    "SA3_name": "Hurstville",
+    "YEAR": 2016,
+    "POP_CHILD": 8494,
+    "AVAILIBILITY": 4380,
+    "SERVICE_CENTER": 55,
+    "FEE_DAY": 74.4,
+    "INCOME_DAY": 353
+  },
+  {
+    "SA3_code": 11904,
+    "SA3_name": "Kogarah - Rockdale",
+    "YEAR": 2016,
+    "POP_CHILD": 9892,
+    "AVAILIBILITY": 4290,
+    "SERVICE_CENTER": 60,
+    "FEE_DAY": 71.2,
+    "INCOME_DAY": 353
+  },
+  {
+    "SA3_code": 12001,
+    "SA3_name": "Canada Bay",
+    "YEAR": 2016,
+    "POP_CHILD": 5759,
+    "AVAILIBILITY": 3660,
+    "SERVICE_CENTER": 38,
+    "FEE_DAY": 84.4,
+    "INCOME_DAY": 477
+  },
+  {
+    "SA3_code": 12002,
+    "SA3_name": "Leichhardt",
+    "YEAR": 2016,
+    "POP_CHILD": 4330,
+    "AVAILIBILITY": 2900,
+    "SERVICE_CENTER": 30,
+    "FEE_DAY": 100,
+    "INCOME_DAY": 665
+  },
+  {
+    "SA3_code": 12003,
+    "SA3_name": "Strathfield - Burwood - Ashfield",
+    "YEAR": 2016,
+    "POP_CHILD": 9813,
+    "AVAILIBILITY": 4610,
+    "SERVICE_CENTER": 60,
+    "FEE_DAY": 82.8,
+    "INCOME_DAY": 392
+  },
+  {
+    "SA3_code": 12101,
+    "SA3_name": "Chatswood - Lane Cove",
+    "YEAR": 2016,
+    "POP_CHILD": 7637,
+    "AVAILIBILITY": 4920,
+    "SERVICE_CENTER": 52,
+    "FEE_DAY": 96.8,
+    "INCOME_DAY": 557
+  },
+  {
+    "SA3_code": 12102,
+    "SA3_name": "Hornsby",
+    "YEAR": 2016,
+    "POP_CHILD": 5873,
+    "AVAILIBILITY": 3140,
+    "SERVICE_CENTER": 41,
+    "FEE_DAY": 78.4,
+    "INCOME_DAY": 450
+  },
+  {
+    "SA3_code": 12103,
+    "SA3_name": "Ku-ring-gai",
+    "YEAR": 2016,
+    "POP_CHILD": 6753,
+    "AVAILIBILITY": 3330,
+    "SERVICE_CENTER": 41,
+    "FEE_DAY": 101.6,
+    "INCOME_DAY": 610
+  },
+  {
+    "SA3_code": 12104,
+    "SA3_name": "North Sydney - Mosman",
+    "YEAR": 2016,
+    "POP_CHILD": 5643,
+    "AVAILIBILITY": 4040,
+    "SERVICE_CENTER": 43,
+    "FEE_DAY": 107.2,
+    "INCOME_DAY": 671
+  },
+  {
+    "SA3_code": 12201,
+    "SA3_name": "Manly",
+    "YEAR": 2016,
+    "POP_CHILD": 3417,
+    "AVAILIBILITY": 1750,
+    "SERVICE_CENTER": 19,
+    "FEE_DAY": 102.8,
+    "INCOME_DAY": 668
+  },
+  {
+    "SA3_code": 12202,
+    "SA3_name": "Pittwater",
+    "YEAR": 2016,
+    "POP_CHILD": 3901,
+    "AVAILIBILITY": 2180,
+    "SERVICE_CENTER": 23,
+    "FEE_DAY": 82.4,
+    "INCOME_DAY": 486
+  },
+  {
+    "SA3_code": 12203,
+    "SA3_name": "Warringah",
+    "YEAR": 2016,
+    "POP_CHILD": 10556,
+    "AVAILIBILITY": 6270,
+    "SERVICE_CENTER": 67,
+    "FEE_DAY": 85.6,
+    "INCOME_DAY": 485
+  },
+  {
+    "SA3_code": 12301,
+    "SA3_name": "Camden",
+    "YEAR": 2016,
+    "POP_CHILD": 4998,
+    "AVAILIBILITY": 3360,
+    "SERVICE_CENTER": 28,
+    "FEE_DAY": 63.6,
+    "INCOME_DAY": 436
+  },
+  {
+    "SA3_code": 12302,
+    "SA3_name": "Campbelltown (NSW)",
+    "YEAR": 2016,
+    "POP_CHILD": 13380,
+    "AVAILIBILITY": 6230,
+    "SERVICE_CENTER": 75,
+    "FEE_DAY": 58,
+    "INCOME_DAY": 319
+  },
+  {
+    "SA3_code": 12303,
+    "SA3_name": "Wollondilly",
+    "YEAR": 2016,
+    "POP_CHILD": 3107,
+    "AVAILIBILITY": 1760,
+    "SERVICE_CENTER": 19,
+    "FEE_DAY": 55.2,
+    "INCOME_DAY": 396
+  },
+  {
+    "SA3_code": 12401,
+    "SA3_name": "Blue Mountains",
+    "YEAR": 2016,
+    "POP_CHILD": 5065,
+    "AVAILIBILITY": 1950,
+    "SERVICE_CENTER": 21,
+    "FEE_DAY": 66.4,
+    "INCOME_DAY": 373
+  },
+  {
+    "SA3_code": 12403,
+    "SA3_name": "Penrith",
+    "YEAR": 2016,
+    "POP_CHILD": 11214,
+    "AVAILIBILITY": 6750,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 64.4,
+    "INCOME_DAY": 387
+  },
+  {
+    "SA3_code": 12404,
+    "SA3_name": "Richmond - Windsor",
+    "YEAR": 2016,
+    "POP_CHILD": 2861,
+    "AVAILIBILITY": 1720,
+    "SERVICE_CENTER": 22,
+    "FEE_DAY": 62.8,
+    "INCOME_DAY": 350
+  },
+  {
+    "SA3_code": 12405,
+    "SA3_name": "St Marys",
+    "YEAR": 2016,
+    "POP_CHILD": 4449,
+    "AVAILIBILITY": 1650,
+    "SERVICE_CENTER": 20,
+    "FEE_DAY": 61.2,
+    "INCOME_DAY": 339
+  },
+  {
+    "SA3_code": 12501,
+    "SA3_name": "Auburn",
+    "YEAR": 2016,
+    "POP_CHILD": 7613,
+    "AVAILIBILITY": 2140,
+    "SERVICE_CENTER": 25,
+    "FEE_DAY": 67.6,
+    "INCOME_DAY": 282
+  },
+  {
+    "SA3_code": 12502,
+    "SA3_name": "Carlingford",
+    "YEAR": 2016,
+    "POP_CHILD": 4300,
+    "AVAILIBILITY": 2150,
+    "SERVICE_CENTER": 26,
+    "FEE_DAY": 75.6,
+    "INCOME_DAY": 379
+  },
+  {
+    "SA3_code": 12503,
+    "SA3_name": "Merrylands - Guildford",
+    "YEAR": 2016,
+    "POP_CHILD": 12842,
+    "AVAILIBILITY": 6380,
+    "SERVICE_CENTER": 84,
+    "FEE_DAY": 62.4,
+    "INCOME_DAY": 281
+  },
+  {
+    "SA3_code": 12504,
+    "SA3_name": "Parramatta",
+    "YEAR": 2016,
+    "POP_CHILD": 11298,
+    "AVAILIBILITY": 6640,
+    "SERVICE_CENTER": 74,
+    "FEE_DAY": 69.2,
+    "INCOME_DAY": 376
+  },
+  {
+    "SA3_code": 12601,
+    "SA3_name": "Pennant Hills - Epping",
+    "YEAR": 2016,
+    "POP_CHILD": 2447,
+    "AVAILIBILITY": 1570,
+    "SERVICE_CENTER": 18,
+    "FEE_DAY": 84,
+    "INCOME_DAY": 488
+  },
+  {
+    "SA3_code": 12602,
+    "SA3_name": "Ryde - Hunters Hill",
+    "YEAR": 2016,
+    "POP_CHILD": 8612,
+    "AVAILIBILITY": 6120,
+    "SERVICE_CENTER": 57,
+    "FEE_DAY": 84.4,
+    "INCOME_DAY": 433
+  },
+  {
+    "SA3_code": 12701,
+    "SA3_name": "Bringelly - Green Valley",
+    "YEAR": 2016,
+    "POP_CHILD": 7745,
+    "AVAILIBILITY": 4770,
+    "SERVICE_CENTER": 54,
+    "FEE_DAY": 57.6,
+    "INCOME_DAY": 352
+  },
+  {
+    "SA3_code": 12702,
+    "SA3_name": "Fairfield",
+    "YEAR": 2016,
+    "POP_CHILD": 13494,
+    "AVAILIBILITY": 5840,
+    "SERVICE_CENTER": 69,
+    "FEE_DAY": 61.2,
+    "INCOME_DAY": 256
+  },
+  {
+    "SA3_code": 12703,
+    "SA3_name": "Liverpool",
+    "YEAR": 2016,
+    "POP_CHILD": 10185,
+    "AVAILIBILITY": 4740,
+    "SERVICE_CENTER": 56,
+    "FEE_DAY": 60,
+    "INCOME_DAY": 333
+  },
+  {
+    "SA3_code": 12801,
+    "SA3_name": "Cronulla - Miranda - Caringbah",
+    "YEAR": 2016,
+    "POP_CHILD": 7075,
+    "AVAILIBILITY": 4650,
+    "SERVICE_CENTER": 57,
+    "FEE_DAY": 77.2,
+    "INCOME_DAY": 455
+  },
+  {
+    "SA3_code": 12802,
+    "SA3_name": "Sutherland - Menai - Heathcote",
+    "YEAR": 2016,
+    "POP_CHILD": 7882,
+    "AVAILIBILITY": 4500,
+    "SERVICE_CENTER": 54,
+    "FEE_DAY": 71.2,
+    "INCOME_DAY": 469
+  },
+  {
+    "SA3_code": 10201,
+    "SA3_name": "Gosford",
+    "YEAR": 2026,
+    "POP_CHILD": 11094,
+    "AVAILIBILITY": 6925,
+    "SERVICE_CENTER": 71,
+    "FEE_DAY": 80.48,
+    "INCOME_DAY": 412
+  },
+  {
+    "SA3_code": 10202,
+    "SA3_name": "Wyong",
+    "YEAR": 2026,
+    "POP_CHILD": 11976,
+    "AVAILIBILITY": 6240,
+    "SERVICE_CENTER": 57,
+    "FEE_DAY": 78.48,
+    "INCOME_DAY": 353
+  },
+  {
+    "SA3_code": 11501,
+    "SA3_name": "Baulkham Hills",
+    "YEAR": 2026,
+    "POP_CHILD": 11623,
+    "AVAILIBILITY": 7715,
+    "SERVICE_CENTER": 81,
+    "FEE_DAY": 96.08,
+    "INCOME_DAY": 602
+  },
+  {
+    "SA3_code": 11502,
+    "SA3_name": "Dural - Wisemans Ferry",
+    "YEAR": 2026,
+    "POP_CHILD": 1383,
+    "AVAILIBILITY": 1060,
+    "SERVICE_CENTER": 15,
+    "FEE_DAY": 90.72,
+    "INCOME_DAY": 563
+  },
+  {
+    "SA3_code": 11503,
+    "SA3_name": "Hawkesbury",
+    "YEAR": 2026,
+    "POP_CHILD": 1573,
+    "AVAILIBILITY": 575,
+    "SERVICE_CENTER": 7,
+    "FEE_DAY": 80.48,
+    "INCOME_DAY": 497
+  },
+  {
+    "SA3_code": 11504,
+    "SA3_name": "Rouse Hill - McGraths Hill",
+    "YEAR": 2026,
+    "POP_CHILD": 4098,
+    "AVAILIBILITY": 2810,
+    "SERVICE_CENTER": 23,
+    "FEE_DAY": 84.88,
+    "INCOME_DAY": 599
+  },
+  {
+    "SA3_code": 11601,
+    "SA3_name": "Blacktown",
+    "YEAR": 2026,
+    "POP_CHILD": 11974,
+    "AVAILIBILITY": 5270,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 77.52,
+    "INCOME_DAY": 420
+  },
+  {
+    "SA3_code": 11602,
+    "SA3_name": "Blacktown - North",
+    "YEAR": 2026,
+    "POP_CHILD": 12422,
+    "AVAILIBILITY": 3670,
+    "SERVICE_CENTER": 37,
+    "FEE_DAY": 83.84,
+    "INCOME_DAY": 562
+  },
+  {
+    "SA3_code": 11603,
+    "SA3_name": "Mount Druitt",
+    "YEAR": 2026,
+    "POP_CHILD": 10728,
+    "AVAILIBILITY": 4450,
+    "SERVICE_CENTER": 46,
+    "FEE_DAY": 73.12,
+    "INCOME_DAY": 368
+  },
+  {
+    "SA3_code": 11701,
+    "SA3_name": "Botany",
+    "YEAR": 2026,
+    "POP_CHILD": 4729,
+    "AVAILIBILITY": 1720,
+    "SERVICE_CENTER": 18,
+    "FEE_DAY": 95.12,
+    "INCOME_DAY": 468
+  },
+  {
+    "SA3_code": 11702,
+    "SA3_name": "Marrickville - Sydenham - Petersham",
+    "YEAR": 2026,
+    "POP_CHILD": 4155,
+    "AVAILIBILITY": 1530,
+    "SERVICE_CENTER": 16,
+    "FEE_DAY": 104.8,
+    "INCOME_DAY": 564
+  },
+  {
+    "SA3_code": 11703,
+    "SA3_name": "Sydney Inner City",
+    "YEAR": 2026,
+    "POP_CHILD": 12280,
+    "AVAILIBILITY": 9580,
+    "SERVICE_CENTER": 111,
+    "FEE_DAY": 122.4,
+    "INCOME_DAY": 616
+  },
+  {
+    "SA3_code": 11801,
+    "SA3_name": "Eastern Suburbs - North",
+    "YEAR": 2026,
+    "POP_CHILD": 8638,
+    "AVAILIBILITY": 5835,
+    "SERVICE_CENTER": 79,
+    "FEE_DAY": 132.64,
+    "INCOME_DAY": 791
+  },
+  {
+    "SA3_code": 11802,
+    "SA3_name": "Eastern Suburbs - South",
+    "YEAR": 2026,
+    "POP_CHILD": 9716,
+    "AVAILIBILITY": 4870,
+    "SERVICE_CENTER": 61,
+    "FEE_DAY": 115.6,
+    "INCOME_DAY": 590
+  },
+  {
+    "SA3_code": 11901,
+    "SA3_name": "Bankstown",
+    "YEAR": 2026,
+    "POP_CHILD": 15373,
+    "AVAILIBILITY": 6970,
+    "SERVICE_CENTER": 92,
+    "FEE_DAY": 80,
+    "INCOME_DAY": 362
+  },
+  {
+    "SA3_code": 11902,
+    "SA3_name": "Canterbury",
+    "YEAR": 2026,
+    "POP_CHILD": 13748,
+    "AVAILIBILITY": 5010,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 80.48,
+    "INCOME_DAY": 334
+  },
+  {
+    "SA3_code": 11903,
+    "SA3_name": "Hurstville",
+    "YEAR": 2026,
+    "POP_CHILD": 9349,
+    "AVAILIBILITY": 4430,
+    "SERVICE_CENTER": 56,
+    "FEE_DAY": 90.72,
+    "INCOME_DAY": 430
+  },
+  {
+    "SA3_code": 11904,
+    "SA3_name": "Kogarah - Rockdale",
+    "YEAR": 2026,
+    "POP_CHILD": 11427,
+    "AVAILIBILITY": 4190,
+    "SERVICE_CENTER": 59,
+    "FEE_DAY": 86.8,
+    "INCOME_DAY": 430
+  },
+  {
+    "SA3_code": 12001,
+    "SA3_name": "Canada Bay",
+    "YEAR": 2026,
+    "POP_CHILD": 6282,
+    "AVAILIBILITY": 4035,
+    "SERVICE_CENTER": 42,
+    "FEE_DAY": 102.88,
+    "INCOME_DAY": 582
+  },
+  {
+    "SA3_code": 12002,
+    "SA3_name": "Leichhardt",
+    "YEAR": 2026,
+    "POP_CHILD": 4348,
+    "AVAILIBILITY": 3225,
+    "SERVICE_CENTER": 34,
+    "FEE_DAY": 121.92,
+    "INCOME_DAY": 810
+  },
+  {
+    "SA3_code": 12003,
+    "SA3_name": "Strathfield - Burwood - Ashfield",
+    "YEAR": 2026,
+    "POP_CHILD": 12380,
+    "AVAILIBILITY": 4735,
+    "SERVICE_CENTER": 62,
+    "FEE_DAY": 100.96,
+    "INCOME_DAY": 477
+  },
+  {
+    "SA3_code": 12101,
+    "SA3_name": "Chatswood - Lane Cove",
+    "YEAR": 2026,
+    "POP_CHILD": 8113,
+    "AVAILIBILITY": 5320,
+    "SERVICE_CENTER": 56,
+    "FEE_DAY": 118,
+    "INCOME_DAY": 679
+  },
+  {
+    "SA3_code": 12102,
+    "SA3_name": "Hornsby",
+    "YEAR": 2026,
+    "POP_CHILD": 6783,
+    "AVAILIBILITY": 3140,
+    "SERVICE_CENTER": 41,
+    "FEE_DAY": 95.6,
+    "INCOME_DAY": 548
+  },
+  {
+    "SA3_code": 12103,
+    "SA3_name": "Ku-ring-gai",
+    "YEAR": 2026,
+    "POP_CHILD": 7371,
+    "AVAILIBILITY": 3830,
+    "SERVICE_CENTER": 47,
+    "FEE_DAY": 123.84,
+    "INCOME_DAY": 743
+  },
+  {
+    "SA3_code": 12104,
+    "SA3_name": "North Sydney - Mosman",
+    "YEAR": 2026,
+    "POP_CHILD": 5923,
+    "AVAILIBILITY": 4290,
+    "SERVICE_CENTER": 46,
+    "FEE_DAY": 130.64,
+    "INCOME_DAY": 817
+  },
+  {
+    "SA3_code": 12201,
+    "SA3_name": "Manly",
+    "YEAR": 2026,
+    "POP_CHILD": 3171,
+    "AVAILIBILITY": 1825,
+    "SERVICE_CENTER": 20,
+    "FEE_DAY": 125.28,
+    "INCOME_DAY": 814
+  },
+  {
+    "SA3_code": 12202,
+    "SA3_name": "Pittwater",
+    "YEAR": 2026,
+    "POP_CHILD": 4138,
+    "AVAILIBILITY": 2105,
+    "SERVICE_CENTER": 22,
+    "FEE_DAY": 100.48,
+    "INCOME_DAY": 593
+  },
+  {
+    "SA3_code": 12203,
+    "SA3_name": "Warringah",
+    "YEAR": 2026,
+    "POP_CHILD": 10063,
+    "AVAILIBILITY": 6520,
+    "SERVICE_CENTER": 70,
+    "FEE_DAY": 104.32,
+    "INCOME_DAY": 592
+  },
+  {
+    "SA3_code": 12301,
+    "SA3_name": "Camden",
+    "YEAR": 2026,
+    "POP_CHILD": 6825,
+    "AVAILIBILITY": 3560,
+    "SERVICE_CENTER": 30,
+    "FEE_DAY": 77.52,
+    "INCOME_DAY": 532
+  },
+  {
+    "SA3_code": 12302,
+    "SA3_name": "Campbelltown (NSW)",
+    "YEAR": 2026,
+    "POP_CHILD": 15262,
+    "AVAILIBILITY": 6005,
+    "SERVICE_CENTER": 73,
+    "FEE_DAY": 70.72,
+    "INCOME_DAY": 389
+  },
+  {
+    "SA3_code": 12303,
+    "SA3_name": "Wollondilly",
+    "YEAR": 2026,
+    "POP_CHILD": 3345,
+    "AVAILIBILITY": 1960,
+    "SERVICE_CENTER": 21,
+    "FEE_DAY": 67.28,
+    "INCOME_DAY": 482
+  },
+  {
+    "SA3_code": 12401,
+    "SA3_name": "Blue Mountains",
+    "YEAR": 2026,
+    "POP_CHILD": 4989,
+    "AVAILIBILITY": 2150,
+    "SERVICE_CENTER": 23,
+    "FEE_DAY": 80.96,
+    "INCOME_DAY": 455
+  },
+  {
+    "SA3_code": 12403,
+    "SA3_name": "Penrith",
+    "YEAR": 2026,
+    "POP_CHILD": 12829,
+    "AVAILIBILITY": 7250,
+    "SERVICE_CENTER": 70,
+    "FEE_DAY": 78.48,
+    "INCOME_DAY": 471
+  },
+  {
+    "SA3_code": 12404,
+    "SA3_name": "Richmond - Windsor",
+    "YEAR": 2026,
+    "POP_CHILD": 3004,
+    "AVAILIBILITY": 1720,
+    "SERVICE_CENTER": 22,
+    "FEE_DAY": 76.56,
+    "INCOME_DAY": 427
+  },
+  {
+    "SA3_code": 12405,
+    "SA3_name": "St Marys",
+    "YEAR": 2026,
+    "POP_CHILD": 4604,
+    "AVAILIBILITY": 1575,
+    "SERVICE_CENTER": 19,
+    "FEE_DAY": 74.64,
+    "INCOME_DAY": 413
+  },
+  {
+    "SA3_code": 12501,
+    "SA3_name": "Auburn",
+    "YEAR": 2026,
+    "POP_CHILD": 11462,
+    "AVAILIBILITY": 2115,
+    "SERVICE_CENTER": 25,
+    "FEE_DAY": 82.4,
+    "INCOME_DAY": 344
+  },
+  {
+    "SA3_code": 12502,
+    "SA3_name": "Carlingford",
+    "YEAR": 2026,
+    "POP_CHILD": 5115,
+    "AVAILIBILITY": 2275,
+    "SERVICE_CENTER": 28,
+    "FEE_DAY": 92.16,
+    "INCOME_DAY": 462
+  },
+  {
+    "SA3_code": 12503,
+    "SA3_name": "Merrylands - Guildford",
+    "YEAR": 2026,
+    "POP_CHILD": 14267,
+    "AVAILIBILITY": 6380,
+    "SERVICE_CENTER": 84,
+    "FEE_DAY": 76.08,
+    "INCOME_DAY": 342
+  },
+  {
+    "SA3_code": 12504,
+    "SA3_name": "Parramatta",
+    "YEAR": 2026,
+    "POP_CHILD": 14568,
+    "AVAILIBILITY": 6990,
+    "SERVICE_CENTER": 78,
+    "FEE_DAY": 84.32,
+    "INCOME_DAY": 458
+  },
+  {
+    "SA3_code": 12601,
+    "SA3_name": "Pennant Hills - Epping",
+    "YEAR": 2026,
+    "POP_CHILD": 2916,
+    "AVAILIBILITY": 1545,
+    "SERVICE_CENTER": 18,
+    "FEE_DAY": 102.4,
+    "INCOME_DAY": 595
+  },
+  {
+    "SA3_code": 12602,
+    "SA3_name": "Ryde - Hunters Hill",
+    "YEAR": 2026,
+    "POP_CHILD": 10773,
+    "AVAILIBILITY": 6745,
+    "SERVICE_CENTER": 63,
+    "FEE_DAY": 102.88,
+    "INCOME_DAY": 528
+  },
+  {
+    "SA3_code": 12701,
+    "SA3_name": "Bringelly - Green Valley",
+    "YEAR": 2026,
+    "POP_CHILD": 13519,
+    "AVAILIBILITY": 6020,
+    "SERVICE_CENTER": 68,
+    "FEE_DAY": 70.24,
+    "INCOME_DAY": 429
+  },
+  {
+    "SA3_code": 12702,
+    "SA3_name": "Fairfield",
+    "YEAR": 2026,
+    "POP_CHILD": 13207,
+    "AVAILIBILITY": 5715,
+    "SERVICE_CENTER": 68,
+    "FEE_DAY": 74.64,
+    "INCOME_DAY": 312
+  },
+  {
+    "SA3_code": 12703,
+    "SA3_name": "Liverpool",
+    "YEAR": 2026,
+    "POP_CHILD": 12193,
+    "AVAILIBILITY": 4740,
+    "SERVICE_CENTER": 56,
+    "FEE_DAY": 73.12,
+    "INCOME_DAY": 406
+  },
+  {
+    "SA3_code": 12801,
+    "SA3_name": "Cronulla - Miranda - Caringbah",
+    "YEAR": 2026,
+    "POP_CHILD": 7170,
+    "AVAILIBILITY": 5275,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 94.08,
+    "INCOME_DAY": 555
+  },
+  {
+    "SA3_code": 12802,
+    "SA3_name": "Sutherland - Menai - Heathcote",
+    "YEAR": 2026,
+    "POP_CHILD": 7977,
+    "AVAILIBILITY": 5250,
+    "SERVICE_CENTER": 63,
+    "FEE_DAY": 86.8,
+    "INCOME_DAY": 571
+  },
+  {
+    "SA3_code": 10201,
+    "SA3_name": "Gosford",
+    "YEAR": 2036,
+    "POP_CHILD": 11028,
+    "AVAILIBILITY": 7000,
+    "SERVICE_CENTER": 72,
+    "FEE_DAY": 98.08,
+    "INCOME_DAY": 503
+  },
+  {
+    "SA3_code": 10202,
+    "SA3_name": "Wyong",
+    "YEAR": 2036,
+    "POP_CHILD": 12809,
+    "AVAILIBILITY": 6340,
+    "SERVICE_CENTER": 58,
+    "FEE_DAY": 95.68,
+    "INCOME_DAY": 430
+  },
+  {
+    "SA3_code": 11501,
+    "SA3_name": "Baulkham Hills",
+    "YEAR": 2036,
+    "POP_CHILD": 13528,
+    "AVAILIBILITY": 8340,
+    "SERVICE_CENTER": 88,
+    "FEE_DAY": 117.12,
+    "INCOME_DAY": 733
+  },
+  {
+    "SA3_code": 11502,
+    "SA3_name": "Dural - Wisemans Ferry",
+    "YEAR": 2036,
+    "POP_CHILD": 1375,
+    "AVAILIBILITY": 1110,
+    "SERVICE_CENTER": 16,
+    "FEE_DAY": 110.56,
+    "INCOME_DAY": 686
+  },
+  {
+    "SA3_code": 11503,
+    "SA3_name": "Hawkesbury",
+    "YEAR": 2036,
+    "POP_CHILD": 1601,
+    "AVAILIBILITY": 600,
+    "SERVICE_CENTER": 7,
+    "FEE_DAY": 98.08,
+    "INCOME_DAY": 606
+  },
+  {
+    "SA3_code": 11504,
+    "SA3_name": "Rouse Hill - McGraths Hill",
+    "YEAR": 2036,
+    "POP_CHILD": 5495,
+    "AVAILIBILITY": 3060,
+    "SERVICE_CENTER": 26,
+    "FEE_DAY": 103.44,
+    "INCOME_DAY": 730
+  },
+  {
+    "SA3_code": 11601,
+    "SA3_name": "Blacktown",
+    "YEAR": 2036,
+    "POP_CHILD": 12971,
+    "AVAILIBILITY": 5420,
+    "SERVICE_CENTER": 67,
+    "FEE_DAY": 94.48,
+    "INCOME_DAY": 512
+  },
+  {
+    "SA3_code": 11602,
+    "SA3_name": "Blacktown - North",
+    "YEAR": 2036,
+    "POP_CHILD": 16338,
+    "AVAILIBILITY": 3770,
+    "SERVICE_CENTER": 39,
+    "FEE_DAY": 102.24,
+    "INCOME_DAY": 685
+  },
+  {
+    "SA3_code": 11603,
+    "SA3_name": "Mount Druitt",
+    "YEAR": 2036,
+    "POP_CHILD": 10901,
+    "AVAILIBILITY": 4700,
+    "SERVICE_CENTER": 49,
+    "FEE_DAY": 89.12,
+    "INCOME_DAY": 448
+  },
+  {
+    "SA3_code": 11701,
+    "SA3_name": "Botany",
+    "YEAR": 2036,
+    "POP_CHILD": 4557,
+    "AVAILIBILITY": 1720,
+    "SERVICE_CENTER": 18,
+    "FEE_DAY": 115.92,
+    "INCOME_DAY": 571
+  },
+  {
+    "SA3_code": 11702,
+    "SA3_name": "Marrickville - Sydenham - Petersham",
+    "YEAR": 2036,
+    "POP_CHILD": 4534,
+    "AVAILIBILITY": 1180,
+    "SERVICE_CENTER": 12,
+    "FEE_DAY": 127.76,
+    "INCOME_DAY": 687
+  },
+  {
+    "SA3_code": 11703,
+    "SA3_name": "Sydney Inner City",
+    "YEAR": 2036,
+    "POP_CHILD": 13153,
+    "AVAILIBILITY": 10830,
+    "SERVICE_CENTER": 125,
+    "FEE_DAY": 149.2,
+    "INCOME_DAY": 751
+  },
+  {
+    "SA3_code": 11801,
+    "SA3_name": "Eastern Suburbs - North",
+    "YEAR": 2036,
+    "POP_CHILD": 8229,
+    "AVAILIBILITY": 6460,
+    "SERVICE_CENTER": 87,
+    "FEE_DAY": 161.68,
+    "INCOME_DAY": 964
+  },
+  {
+    "SA3_code": 11802,
+    "SA3_name": "Eastern Suburbs - South",
+    "YEAR": 2036,
+    "POP_CHILD": 10712,
+    "AVAILIBILITY": 5120,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 140.88,
+    "INCOME_DAY": 719
+  },
+  {
+    "SA3_code": 11901,
+    "SA3_name": "Bankstown",
+    "YEAR": 2036,
+    "POP_CHILD": 16722,
+    "AVAILIBILITY": 7220,
+    "SERVICE_CENTER": 95,
+    "FEE_DAY": 97.44,
+    "INCOME_DAY": 441
+  },
+  {
+    "SA3_code": 11902,
+    "SA3_name": "Canterbury",
+    "YEAR": 2036,
+    "POP_CHILD": 16000,
+    "AVAILIBILITY": 5010,
+    "SERVICE_CENTER": 65,
+    "FEE_DAY": 98.08,
+    "INCOME_DAY": 407
+  },
+  {
+    "SA3_code": 11903,
+    "SA3_name": "Hurstville",
+    "YEAR": 2036,
+    "POP_CHILD": 9452,
+    "AVAILIBILITY": 4480,
+    "SERVICE_CENTER": 57,
+    "FEE_DAY": 110.56,
+    "INCOME_DAY": 525
+  },
+  {
+    "SA3_code": 11904,
+    "SA3_name": "Kogarah - Rockdale",
+    "YEAR": 2036,
+    "POP_CHILD": 11920,
+    "AVAILIBILITY": 4090,
+    "SERVICE_CENTER": 58,
+    "FEE_DAY": 105.76,
+    "INCOME_DAY": 524
+  },
+  {
+    "SA3_code": 12001,
+    "SA3_name": "Canada Bay",
+    "YEAR": 2036,
+    "POP_CHILD": 7142,
+    "AVAILIBILITY": 4410,
+    "SERVICE_CENTER": 46,
+    "FEE_DAY": 125.44,
+    "INCOME_DAY": 709
+  },
+  {
+    "SA3_code": 12002,
+    "SA3_name": "Leichhardt",
+    "YEAR": 2036,
+    "POP_CHILD": 4472,
+    "AVAILIBILITY": 3550,
+    "SERVICE_CENTER": 37,
+    "FEE_DAY": 148.56,
+    "INCOME_DAY": 988
+  },
+  {
+    "SA3_code": 12003,
+    "SA3_name": "Strathfield - Burwood - Ashfield",
+    "YEAR": 2036,
+    "POP_CHILD": 13028,
+    "AVAILIBILITY": 4860,
+    "SERVICE_CENTER": 64,
+    "FEE_DAY": 123.04,
+    "INCOME_DAY": 582
+  },
+  {
+    "SA3_code": 12101,
+    "SA3_name": "Chatswood - Lane Cove",
+    "YEAR": 2036,
+    "POP_CHILD": 8712,
+    "AVAILIBILITY": 5720,
+    "SERVICE_CENTER": 61,
+    "FEE_DAY": 143.84,
+    "INCOME_DAY": 827
+  },
+  {
+    "SA3_code": 12102,
+    "SA3_name": "Hornsby",
+    "YEAR": 2036,
+    "POP_CHILD": 6878,
+    "AVAILIBILITY": 3140,
+    "SERVICE_CENTER": 41,
+    "FEE_DAY": 116.48,
+    "INCOME_DAY": 668
+  },
+  {
+    "SA3_code": 12103,
+    "SA3_name": "Ku-ring-gai",
+    "YEAR": 2036,
+    "POP_CHILD": 7790,
+    "AVAILIBILITY": 4330,
+    "SERVICE_CENTER": 54,
+    "FEE_DAY": 150.96,
+    "INCOME_DAY": 906
+  },
+  {
+    "SA3_code": 12104,
+    "SA3_name": "North Sydney - Mosman",
+    "YEAR": 2036,
+    "POP_CHILD": 6148,
+    "AVAILIBILITY": 4540,
+    "SERVICE_CENTER": 49,
+    "FEE_DAY": 159.28,
+    "INCOME_DAY": 996
+  },
+  {
+    "SA3_code": 12201,
+    "SA3_name": "Manly",
+    "YEAR": 2036,
+    "POP_CHILD": 3251,
+    "AVAILIBILITY": 1900,
+    "SERVICE_CENTER": 21,
+    "FEE_DAY": 152.72,
+    "INCOME_DAY": 992
+  },
+  {
+    "SA3_code": 12202,
+    "SA3_name": "Pittwater",
+    "YEAR": 2036,
+    "POP_CHILD": 4503,
+    "AVAILIBILITY": 2030,
+    "SERVICE_CENTER": 22,
+    "FEE_DAY": 122.48,
+    "INCOME_DAY": 722
+  },
+  {
+    "SA3_code": 12203,
+    "SA3_name": "Warringah",
+    "YEAR": 2036,
+    "POP_CHILD": 10141,
+    "AVAILIBILITY": 6770,
+    "SERVICE_CENTER": 73,
+    "FEE_DAY": 127.2,
+    "INCOME_DAY": 721
+  },
+  {
+    "SA3_code": 12301,
+    "SA3_name": "Camden",
+    "YEAR": 2036,
+    "POP_CHILD": 7462,
+    "AVAILIBILITY": 3760,
+    "SERVICE_CENTER": 32,
+    "FEE_DAY": 94.48,
+    "INCOME_DAY": 648
+  },
+  {
+    "SA3_code": 12302,
+    "SA3_name": "Campbelltown (NSW)",
+    "YEAR": 2036,
+    "POP_CHILD": 17042,
+    "AVAILIBILITY": 5780,
+    "SERVICE_CENTER": 70,
+    "FEE_DAY": 86.16,
+    "INCOME_DAY": 474
+  },
+  {
+    "SA3_code": 12303,
+    "SA3_name": "Wollondilly",
+    "YEAR": 2036,
+    "POP_CHILD": 4138,
+    "AVAILIBILITY": 2160,
+    "SERVICE_CENTER": 24,
+    "FEE_DAY": 82,
+    "INCOME_DAY": 588
+  },
+  {
+    "SA3_code": 12401,
+    "SA3_name": "Blue Mountains",
+    "YEAR": 2036,
+    "POP_CHILD": 4976,
+    "AVAILIBILITY": 2350,
+    "SERVICE_CENTER": 26,
+    "FEE_DAY": 98.64,
+    "INCOME_DAY": 555
+  },
+  {
+    "SA3_code": 12403,
+    "SA3_name": "Penrith",
+    "YEAR": 2036,
+    "POP_CHILD": 13982,
+    "AVAILIBILITY": 7750,
+    "SERVICE_CENTER": 75,
+    "FEE_DAY": 95.68,
+    "INCOME_DAY": 574
+  },
+  {
+    "SA3_code": 12404,
+    "SA3_name": "Richmond - Windsor",
+    "YEAR": 2036,
+    "POP_CHILD": 3000,
+    "AVAILIBILITY": 1720,
+    "SERVICE_CENTER": 22,
+    "FEE_DAY": 93.28,
+    "INCOME_DAY": 521
+  },
+  {
+    "SA3_code": 12405,
+    "SA3_name": "St Marys",
+    "YEAR": 2036,
+    "POP_CHILD": 4540,
+    "AVAILIBILITY": 1500,
+    "SERVICE_CENTER": 19,
+    "FEE_DAY": 90.96,
+    "INCOME_DAY": 503
+  },
+  {
+    "SA3_code": 12501,
+    "SA3_name": "Auburn",
+    "YEAR": 2036,
+    "POP_CHILD": 12491,
+    "AVAILIBILITY": 2090,
+    "SERVICE_CENTER": 25,
+    "FEE_DAY": 100.48,
+    "INCOME_DAY": 419
+  },
+  {
+    "SA3_code": 12502,
+    "SA3_name": "Carlingford",
+    "YEAR": 2036,
+    "POP_CHILD": 5431,
+    "AVAILIBILITY": 2400,
+    "SERVICE_CENTER": 30,
+    "FEE_DAY": 112.32,
+    "INCOME_DAY": 563
+  },
+  {
+    "SA3_code": 12503,
+    "SA3_name": "Merrylands - Guildford",
+    "YEAR": 2036,
+    "POP_CHILD": 15497,
+    "AVAILIBILITY": 6380,
+    "SERVICE_CENTER": 84,
+    "FEE_DAY": 92.72,
+    "INCOME_DAY": 417
+  },
+  {
+    "SA3_code": 12504,
+    "SA3_name": "Parramatta",
+    "YEAR": 2036,
+    "POP_CHILD": 16901,
+    "AVAILIBILITY": 7340,
+    "SERVICE_CENTER": 82,
+    "FEE_DAY": 102.8,
+    "INCOME_DAY": 558
+  },
+  {
+    "SA3_code": 12601,
+    "SA3_name": "Pennant Hills - Epping",
+    "YEAR": 2036,
+    "POP_CHILD": 2917,
+    "AVAILIBILITY": 1520,
+    "SERVICE_CENTER": 18,
+    "FEE_DAY": 124.8,
+    "INCOME_DAY": 725
+  },
+  {
+    "SA3_code": 12602,
+    "SA3_name": "Ryde - Hunters Hill",
+    "YEAR": 2036,
+    "POP_CHILD": 11411,
+    "AVAILIBILITY": 7370,
+    "SERVICE_CENTER": 69,
+    "FEE_DAY": 125.44,
+    "INCOME_DAY": 644
+  },
+  {
+    "SA3_code": 12701,
+    "SA3_name": "Bringelly - Green Valley",
+    "YEAR": 2036,
+    "POP_CHILD": 19908,
+    "AVAILIBILITY": 7270,
+    "SERVICE_CENTER": 83,
+    "FEE_DAY": 85.6,
+    "INCOME_DAY": 523
+  },
+  {
+    "SA3_code": 12702,
+    "SA3_name": "Fairfield",
+    "YEAR": 2036,
+    "POP_CHILD": 12948,
+    "AVAILIBILITY": 5590,
+    "SERVICE_CENTER": 67,
+    "FEE_DAY": 90.96,
+    "INCOME_DAY": 380
+  },
+  {
+    "SA3_code": 12703,
+    "SA3_name": "Liverpool",
+    "YEAR": 2036,
+    "POP_CHILD": 12933,
+    "AVAILIBILITY": 4740,
+    "SERVICE_CENTER": 56,
+    "FEE_DAY": 89.12,
+    "INCOME_DAY": 495
+  },
+  {
+    "SA3_code": 12801,
+    "SA3_name": "Cronulla - Miranda - Caringbah",
+    "YEAR": 2036,
+    "POP_CHILD": 7178,
+    "AVAILIBILITY": 5900,
+    "SERVICE_CENTER": 73,
+    "FEE_DAY": 114.72,
+    "INCOME_DAY": 677
+  },
+  {
+    "SA3_code": 12802,
+    "SA3_name": "Sutherland - Menai - Heathcote",
+    "YEAR": 2026,
+    "POP_CHILD": 8020,
+    "AVAILIBILITY": 6000,
+    "SERVICE_CENTER": 72,
+    "FEE_DAY": 105.76,
+    "INCOME_DAY": 696
+  }
+]

@@ -5,6 +5,6 @@ export default () => {
     return (
         <header className='header'>
             <h1>Bundle of joycare</h1>
-        </header>        
+        </header>       
     )
 }
