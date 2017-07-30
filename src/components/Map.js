@@ -5,7 +5,7 @@ import { updateSuburb } from '../actions/app';
 import interpolate from 'color-interpolate';
 import mapFile from '../data/nsw2_optimized2.json';
 // import mapFile from '../data/nsw2_opt1.json';
-import careProvider from '../data/careProvider.json';
+import careProvider from '../data/CHILDCARE_DATA.json';
 
 class HereMap extends Component {
 	componentDidMount() {
