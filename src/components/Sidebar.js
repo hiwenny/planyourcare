@@ -110,7 +110,7 @@ class Sidebar extends React.Component {
     render() {
         const { suburb, year, budget, days, quality } = this.props;
         const style = this.props.scaleBy === 'NONE' ?
-            { background: 'rgba(200, 200, 200, 0.5)' } :
+            { background: 'rgba(255, 255, 255, 0.8)' } :
             {};
         return (
             <aside className='sidebar' style={style}>
@@ -132,7 +132,7 @@ class Sidebar extends React.Component {
                 <section className='sidebar__section section-region'>
                     <h2>Region</h2>
                     <label>
-                        <h3>Scale by:</h3>
+                        <h3>View by:</h3>
                         <VirtualizedSelect
                             autoBlur={true}
                             clearable={false}
