@@ -4,7 +4,7 @@ const initState = {
   suburb: 'Sydney',
   capacity: 0,
   budget: 0,
-  year: 0
+  year: 2016
 }
 
 const app = (state = initState, action) => {

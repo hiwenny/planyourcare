@@ -46,13 +46,13 @@ const scaleBy = [
 
 
 class Sidebar extends React.Component {
-    componentWillUpdate(currProps, nextProps) {
-        const { suburb, capacity, year, budget } = currProps;
-        console.log('sub '+suburb)
-        console.log('cap '+capacity)
-        console.log('yr '+year)
-        console.log('budget '+budget)
-    }
+    // componentWillUpdate(currProps, nextProps) {
+    //     const { suburb, capacity, year, budget } = currProps;
+    //     console.log('sub '+suburb)
+    //     console.log('cap '+capacity)
+    //     console.log('yr '+year)
+    //     console.log('budget '+budget)
+    // }
 
 
     selectYear = (val) => {
@@ -61,6 +61,10 @@ class Sidebar extends React.Component {
 
     selectLocation = (val) => {
         return this.props.dispatch(updateSuburb(val.value));
+    }
+
+    logChange = (val) => {
+        console.log(val)
     }
     
     render() {
