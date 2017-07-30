@@ -5,7 +5,7 @@ const initState = {
   suburb: 'Sydney Inner City',
   scaleBy: regionScaleBy.POP_CHILD,
   capacity: 1000,
-  budget: 1000,
+  budget: 600,
   year: 2016,
   days: 5,
   quality: 0

@@ -52,9 +52,9 @@ class HereMap extends Component {
 	// 	return dispatch(updateSuburb(newSuburb));
 	// }
 
-	filterData = (data, { year, suburb, budget, quality }) => {
+	filterData = (data, { year, suburb, budget, quality, days }) => {
 		const filtered = data.filter((place) => (
-			place.YEAR === year && place.SA3_name === suburb) && place.FEE_DAY_1 <= budget && place.QUALITY >= quality);
+			place.YEAR === year && place.SA3_name === suburb) && place.QUALITY >= quality && place[`FEE_DAY_${days}`] <= budget);
 		return filtered;
 	}
 

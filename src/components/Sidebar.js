@@ -45,6 +45,15 @@ const budgetsList = [
 ];
 const budgetsFilter = createFilterOptions({ options: locationsList });
 
+const daysList = [
+    {value: 1, label: 1},
+    {value: 2, label: 2},
+    {value: 3, label: 3},
+    {value: 4, label: 4},
+    {value: 5, label: 5},
+];
+const daysFilter = createFilterOptions({ options: daysList });
+
 const qualityList = [
     {value: 1, label: 1},
     {value: 2, label: 2},
@@ -151,6 +160,19 @@ class Sidebar extends React.Component {
                             options={budgetsList}
                             onChange={this.handleBudgetChange}
                             placeholder='Set budget...'
+                        />
+                    </label>
+                    <label>
+                        <h3>Days per week:</h3>
+                        <VirtualizedSelect
+                            autoBlur={true}
+                            clearable={false}
+                            name="days"
+                            value={days}
+                            filterOptions={daysFilter}
+                            options={daysList}
+                            onChange={this.handleDaysChange}
+                            placeholder='Days enrolled per week...'
                         />
                     </label>
                     <label>
