@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { updateScaleBy } from '../actions/app';
+import { updateScaleBy, updateYear } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
@@ -35,6 +35,9 @@ const scaleBy = [
     { value: regionScaleBy.SERVICE_CENTER, label: 'Number of Childcare centre' },
     { value: regionScaleBy.FEE_DAY, label: 'Average fee by day' },
     { value: regionScaleBy.INCOME_DAY, label: 'Household Income per day' },
+    { value: regionScaleBy.CAPACITY_RATIO, label: 'Capacity Ratio' },
+    { value: regionScaleBy.UNPAID_CHILDCARE_RATIO, label: 'Unpaid childcare ratio' },
+    { value: regionScaleBy.UNPAID_CHILDCARE, label: 'Number of children not in childcare' },
 ];
 
 function logChange(val) {
@@ -43,9 +46,11 @@ function logChange(val) {
 
 class Sidebar extends React.Component {
     handleScaleByChange = (val) => {
-        console.log("changeed va;", val)
-        const { dispatch } = this.props;
         this.props.updateScaleByDispatch(val.value);
+    }
+
+    handleYearChange = (val) => {
+        this.props.updateYearDispatch(val.value);
     }
 
     render() {
@@ -58,10 +63,10 @@ class Sidebar extends React.Component {
                             autoBlur={true}
                             clearable={false}
                             name="year"
-                            value={'one'}
+                            value={this.props.year}
                             filterOptions={yearsFilter}
                             options={years}
-                            onChange={logChange}
+                            onChange={this.handleYearChange}
                             placeholder='Select year...'
                         />
                     </label>
@@ -101,12 +106,13 @@ class Sidebar extends React.Component {
 function mapStateToProps(store) {
   return {
       scaleBy: store.app.scaleBy,
-    // suburb: store.app.suburb,
+      year: store.app.year,
   }
 }
 
 const mapDispatchToProps = {
     updateScaleByDispatch: updateScaleBy,
+    updateYearDispatch: updateYear,
 }
 
 Sidebar.defaultProps = {

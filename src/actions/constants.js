@@ -1,2 +1,3 @@
 export const UPDATE_SUBURB = 'UPDATE_SUBURB';
 export const UPDATE_SCALE_BY = 'UPDATE_SCALE_BY';
+export const UPDATE_YEAR = 'UPDATE_YEAR';

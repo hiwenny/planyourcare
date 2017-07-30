@@ -6,10 +6,13 @@ const regionScaleBy = {
     INCOME_DAY: 'INCOME_DAY',
     SERVICE_CENTER: 'SERVICE_CENTER',
     FEE_DAY: 'FEE_DAY',
+    CAPACITY_RATIO: 'CAPACITY_RATIO',
+    UNPAID_CHILDCARE_RATIO: 'UNPAID_CHILDCARE_RATIO',
+    UNPAID_CHILDCARE: 'UNPAID_CHILDCARE',
 };
 
 // FOR FILTERING COLORS
-const scaleSmallestLargest = {}
+let scaleSmallestLargest = {}
 const createSmallestLargest = (numbers) => {
     return {
         smallest: Math.min(...numbers),
@@ -17,19 +20,36 @@ const createSmallestLargest = (numbers) => {
     }
 }
 
-Object.values(regionScaleBy).forEach((val) => {
-    const numbers = SA3.map(x => x[val])
-    scaleSmallestLargest[val] = createSmallestLargest(numbers)
+SA3.forEach((data) => {
+    Object.keys(data).forEach(key => {
+        const scaleKey = `${key}_${data['YEAR']}`;
+        
+        if (!(scaleKey in scaleSmallestLargest)) {
+            scaleSmallestLargest[scaleKey] = {
+                smallest: Number.MAX_VALUE,
+                largest: -1,
+            };
+        }
+
+        if (scaleSmallestLargest[scaleKey].smallest > data[key]) {
+            scaleSmallestLargest[scaleKey].smallest = data[key]
+        }
+
+        if (scaleSmallestLargest[scaleKey].largest < data[key]) {
+            scaleSmallestLargest[scaleKey].largest = data[key]
+        }
+    })
 })
 
-const sa3ByRegion = {};
+const sa3ByRegionYear = {};
 
 SA3.forEach((x) => {
-    sa3ByRegion[x['SA3_name']] = x
+    const key = `${x['SA3_name']}_${x['YEAR']}`
+    sa3ByRegionYear[key] = x
 });
 
 export {
     regionScaleBy,
-    sa3ByRegion,
+    sa3ByRegionYear,
     scaleSmallestLargest,
 }

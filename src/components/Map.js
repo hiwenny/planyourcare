@@ -6,7 +6,7 @@ import interpolate from 'color-interpolate';
 import mapFile from '../data/nsw2_optimized2.json';
 // import mapFile from '../data/nsw2_opt1.json';
 import careProvider from '../data/careProvider.json';
-import { sa3ByRegion, scaleSmallestLargest, regionScaleBy } from '../data/sa3_data';
+import { sa3ByRegionYear, scaleSmallestLargest, regionScaleBy } from '../data/sa3_data';
 
 class HereMap extends Component {
 	constructor() {
@@ -34,7 +34,7 @@ class HereMap extends Component {
 
 		this.addBoundaries();
 		this.addMarkers();
-		console.log(this.props.suburb)
+		// console.log(this.props.suburb)
 	}
 
 	// updateSuburbOnHover = (newSuburb, e) => {
@@ -108,7 +108,7 @@ class HereMap extends Component {
 				return
 			}
 
-			console.log('PROPERTIES', properties.SA3_NAME16);
+			// console.log('PROPERTIES', properties.SA3_NAME16);
 			if (type === 'Polygon') {
 				const c = coordinates && coordinates.length && coordinates[0];
 				const pushed = {
@@ -128,7 +128,7 @@ class HereMap extends Component {
 			}
 		})
 
-		const currSmallestLargestObj = scaleSmallestLargest[this.props.scaleBy]
+		const currSmallestLargestObj = scaleSmallestLargest[`${this.props.scaleBy}_${this.props.year}`]
 		const getScale01 = (number) => {
 			const { smallest, largest } = currSmallestLargestObj;
 			return (number - smallest) / (largest - smallest);
@@ -141,17 +141,19 @@ class HereMap extends Component {
 			}
 
 			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)']);
-			if (!sa3ByRegion[region]) return
+			const key = `${region}_${this.props.year}`;
+			if (!sa3ByRegionYear[key]) {
+				return;
+			}
 
-			let percentage = sa3ByRegion[region] ?
-				getScale01(sa3ByRegion[region][this.props.scaleBy]) :
+			let percentage = sa3ByRegionYear[key] ?
+				getScale01(sa3ByRegionYear[key][this.props.scaleBy]) :
 				0
 				
 			if (this.props.scaleBy === regionScaleBy.FEE_DAY) {
 				percentage = 1 - percentage;
 			}
 
-			console.log('PRECENTAGEEE', percentage);
 			this.addBoundary(coordPairs, colormap(percentage))
 		})
 	}
@@ -200,6 +202,7 @@ function mapStateToProps(store) {
 	return {
 		suburb: store.app.suburb,
 		scaleBy: store.app.scaleBy,
+		year: store.app.year,
 	}
 }
 

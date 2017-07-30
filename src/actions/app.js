@@ -13,3 +13,11 @@ export function updateScaleBy(scaleBy) {
     scaleBy,
   }
 }
+
+export function updateYear(year) {
+  console.log('UPDATING YEAR', year);
+  return {
+    type: actionTypes.UPDATE_YEAR,
+    year,
+  }
+}
