@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { updateSuburb } from '../actions/app';
+import { updateSuburb, updateCapacity, updateBudget, updateYear } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
@@ -49,6 +49,13 @@ function logChange(val) {
 }
 
 class Sidebar extends React.Component {
+    componentDidMount() {
+        const { suburb, capacity, year, budget } = this.props;
+        console.log('sub '+suburb)
+        console.log('cap '+capacity)
+        console.log('yr '+year)
+        console.log('budget '+budget)
+    }
     render() {
         return (
             <aside className='sidebar'>
@@ -101,17 +108,23 @@ class Sidebar extends React.Component {
 
 function mapStateToProps(store) {
   return {
-    // suburb: store.app.suburb,
+    suburb: store.app.suburb,
   }
 }
 
 
 Sidebar.defaultProps = {
-//   suburb: 'Sydney',
+  suburb: 'Sydney',
+  capacity: null,
+  budget: null,
+  year: null
 }
 
 Sidebar.propTypes = {
-//   suburb: PropTypes.string,
+  suburb: PropTypes.string,
+  capacity: PropTypes.string,
+  budget: PropTypes.string,
+  year: PropTypes.string,
   dispatch: PropTypes.func,
 }
 export default connect(mapStateToProps)(Sidebar)

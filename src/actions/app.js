@@ -21,9 +21,9 @@ export function updateBudget(budget) {
   }
 }
 
-export function updateLocation(location) {
+export function updateYear(year) {
   return {
-    type: actionTypes.UPDATE_LOCATION,
-    location: location
+    type: actionTypes.UPDATE_YEAR,
+    year: year
   }
 }
