@@ -6,3 +6,10 @@ export function updateSuburb(suburb) {
     suburb: suburb
   }
 }
+
+export function updateScaleBy(scaleBy) {
+  return {
+    type: actionTypes.UPDATE_SCALE_BY,
+    scaleBy,
+  }
+}

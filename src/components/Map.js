@@ -83,42 +83,28 @@ class HereMap extends Component {
 
 	addBoundaries = () => {
 		const { features } = mapFile;
-		// console.log('FEATUREs', features);
 		let coors = []
 		features.forEach((feature) => {
 			let { geometry = {}, properties } = feature
 			if (geometry === null) {
-				// console.log('FEATURE', feature);
 				geometry = {}
 			}
 			const { coordinates, type } = geometry
 			if (typeof type === 'undefined') {
-				// console.log('type is undefined');
 				return
 			}
 
 			// console.log('PROPERTIES', properties.SA3_NAME16);
 			if (type === 'Polygon') {
 				const c = coordinates && coordinates.length && coordinates[0];
-				// console.log('C', c);
 				coors.push(c);
 			} else if (type === 'MultiPolygon') {
-				// console.log('C2', c);
 				coordinates.forEach((c2) => {
 					const flatten = [].concat(...c2)
 					coors.push(flatten)
 				})
-				// let concatenated = [].concat(...coordinates)
-				// concatenated = [].concat(...concatenated)
-				// console.log('CONCATENATED', concatenated);
-				// coors.push(concatenated)
-				// c.forEach((c2) => {
-				// 	coors.push(c2);
-				// });
 			}
-			// console.log('Coors', coors);
 		})
-		// console.log('COORS LENGTH', coors.length);
 
 		coors.forEach((coordPairs, index) => {
 			if (!coordPairs) {

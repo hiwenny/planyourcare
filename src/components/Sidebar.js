@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { updateSuburb } from '../actions/app';
+import { updateScaleBy } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
 import createFilterOptions from 'react-select-fast-filter-options';
 import SA3 from '../data/SA3.json';
+import { regionScaleBy } from '../data/sa3_data';
 
 const createOptionsFromJSON = (keyName, valueName) => {
     if (!valueName) valueName = keyName;
@@ -28,14 +29,6 @@ const yearsFilter = createFilterOptions({ options: years });
 const locations = createOptionsFromJSON('SA3_name');
 const locationsFilter = createFilterOptions({ options: locations });
 
-const regionScaleBy = {
-    POP_CHILD: 'POP_CHILD',
-    AVAILIBILITY: 'AVAILIBILITY',
-    INCOME_DAY: 'INCOME_DAY',
-    SERVICE_CENTER: 'SERVICE_CENTER',
-    FEE_DAY: 'FEE_DAY',
-};
-
 const scaleBy = [
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
     { value: regionScaleBy.AVAILIBILITY, label: 'Childcare capacity (number of kids)' },
@@ -49,6 +42,12 @@ function logChange(val) {
 }
 
 class Sidebar extends React.Component {
+    handleScaleByChange = (val) => {
+        console.log("changeed va;", val)
+        const { dispatch } = this.props;
+        this.props.updateScaleByDispatch(val.value);
+    }
+
     render() {
         return (
             <aside className='sidebar'>
@@ -72,9 +71,9 @@ class Sidebar extends React.Component {
                             autoBlur={true}
                             clearable={false}
                             name="scaleby"
-                            value={'one'}
+                            value={this.props.scaleBy}
                             options={scaleBy}
-                            onChange={logChange}
+                            onChange={this.handleScaleByChange}
                             placeholder='Select scale by...'
                         />
                     </label>
@@ -101,10 +100,14 @@ class Sidebar extends React.Component {
 
 function mapStateToProps(store) {
   return {
+      scaleBy: store.app.scaleBy,
     // suburb: store.app.suburb,
   }
 }
 
+const mapDispatchToProps = {
+    updateScaleByDispatch: updateScaleBy,
+}
 
 Sidebar.defaultProps = {
 //   suburb: 'Sydney',
@@ -114,4 +117,4 @@ Sidebar.propTypes = {
 //   suburb: PropTypes.string,
   dispatch: PropTypes.func,
 }
-export default connect(mapStateToProps)(Sidebar)
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

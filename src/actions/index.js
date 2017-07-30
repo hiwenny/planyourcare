@@ -1,5 +1,6 @@
-import { updateSuburb } from 'app';
+import { updateSuburb, updateScaleBy } from 'app';
 
 export {
-    updateSuburb
+    updateSuburb,
+    updateScaleBy
 }
