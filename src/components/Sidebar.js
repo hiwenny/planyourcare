@@ -33,6 +33,20 @@ const yearsFilter = createFilterOptions({ options: years });
 const locations = createOptionsFromJSON('SA3_name');
 const locationsFilter = createFilterOptions({ options: locations });
 
+// FOR FILTERING COLORS
+const scaleSmallestLargest = {}
+const createSmallestLargest = (numbers) => {
+    return {
+        smallest: Math.min(...numbers),
+        largest: Math.max(...numbers),
+    }
+}
+
+Object.values(regionScaleBy).forEach((val) => {
+    const numbers = SA3.map(x => x[val])
+    scaleSmallestLargest[val] = createSmallestLargest(numbers)
+})
+
 const scaleBy = [
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
     { value: regionScaleBy.AVAILIBILITY, label: 'Childcare capacity (number of kids)' },

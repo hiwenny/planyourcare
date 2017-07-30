@@ -77,19 +77,19 @@ export default class HereMap extends Component {
 		features.forEach((feature) => {
 			let { geometry = {}, properties } = feature
 			if (geometry === null) {
-				console.log('FEATURE', feature);
+				// console.log('FEATURE', feature);
 				geometry = {}
 			}
 			const { coordinates, type } = geometry
 			if (typeof type === 'undefined') {
-				console.log('type is undefined');
+				// console.log('type is undefined');
 				return
 			}
 
-			console.log('PROPERTIES', properties.SA3_NAME16);
+			// console.log('PROPERTIES', properties.SA3_NAME16);
 			if (type === 'Polygon') {
 				const c = coordinates && coordinates.length && coordinates[0];
-				console.log('C', c);
+				// console.log('C', c);
 				coors.push(c);
 			} else if (type === 'MultiPolygon') {
 				// console.log('C2', c);
@@ -105,11 +105,9 @@ export default class HereMap extends Component {
 				// 	coors.push(c2);
 				// });
 			}
-			console.log('Coors', coors);
-
+			// console.log('Coors', coors);
 		})
-
-		console.log('COORS LENGTH', coors.length);
+		// console.log('COORS LENGTH', coors.length);
 
 		coors.forEach((coordPairs, index) => {
 			if (!coordPairs) {
