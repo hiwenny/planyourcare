@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+// import { updateSuburb } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
@@ -45,7 +48,7 @@ function logChange(val) {
     console.log("Selected: " + JSON.stringify(val));
 }
 
-export default class Sidebar extends React.Component {
+class Sidebar extends React.Component {
     render() {
         return (
             <aside className='sidebar'>
@@ -95,3 +98,20 @@ export default class Sidebar extends React.Component {
         );
     }
 }
+
+function mapStateToProps(store) {
+  return {
+    // suburb: store.app.suburb,
+  }
+}
+
+
+Sidebar.defaultProps = {
+//   suburb: 'Sydney',
+}
+
+Sidebar.propTypes = {
+//   suburb: PropTypes.string,
+  dispatch: PropTypes.func,
+}
+export default connect(mapStateToProps)(Sidebar)
