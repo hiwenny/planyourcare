@@ -30,42 +30,43 @@ const locationsList = createOptionsFromJSON('SA3_name');
 const locationsFilter = createFilterOptions({ options: locationsList });
 
 const budgetsList = [
-    {value: 0, label: 0},
-    {value: 50, label: 50},
-    {value: 100, label: 100},
-    {value: 150, label: 150},
-    {value: 200, label: 200},
-    {value: 250, label: 250},
-    {value: 300, label: 300},
-    {value: 350, label: 350},
-    {value: 400, label: 400},
-    {value: 450, label: 450},
-    {value: 500, label: 500},
-    {value: 550, label: 550},
-    {value: 600, label: 600}
+    { value: 0, label: 0 },
+    { value: 50, label: 50 },
+    { value: 100, label: 100 },
+    { value: 150, label: 150 },
+    { value: 200, label: 200 },
+    { value: 250, label: 250 },
+    { value: 300, label: 300 },
+    { value: 350, label: 350 },
+    { value: 400, label: 400 },
+    { value: 450, label: 450 },
+    { value: 500, label: 500 },
+    { value: 550, label: 550 },
+    { value: 600, label: 600 }
 ];
 const budgetsFilter = createFilterOptions({ options: locationsList });
 
 const daysList = [
-    {value: 1, label: 1},
-    {value: 2, label: 2},
-    {value: 3, label: 3},
-    {value: 4, label: 4},
-    {value: 5, label: 5},
+    { value: 1, label: 1 },
+    { value: 2, label: 2 },
+    { value: 3, label: 3 },
+    { value: 4, label: 4 },
+    { value: 5, label: 5 },
 ];
 const daysFilter = createFilterOptions({ options: daysList });
 
 const qualityList = [
-    {value: 0, label: 0},
-    {value: 1, label: 1},
-    {value: 2, label: 2},
-    {value: 3, label: 3},
-    {value: 4, label: 4},
-    {value: 5, label: 5},
+    { value: 0, label: 0 },
+    { value: 1, label: 1 },
+    { value: 2, label: 2 },
+    { value: 3, label: 3 },
+    { value: 4, label: 4 },
+    { value: 5, label: 5 },
 ];
 const qualityFilter = createFilterOptions({ options: qualityList });
 
 const scaleBy = [
+    { value: 'NONE', label: 'None' },
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
     { value: regionScaleBy.AVAILIBILITY, label: 'Childcare capacity (number of kids)' },
     { value: regionScaleBy.SERVICE_CENTER, label: 'Number of Childcare centre' },
@@ -108,8 +109,11 @@ class Sidebar extends React.Component {
 
     render() {
         const { suburb, year, budget, days, quality } = this.props;
+        const style = this.props.scaleBy === 'NONE' ?
+            { background: 'rgba(200, 200, 200, 0.5)' } :
+            {};
         return (
-            <aside className='sidebar'>
+            <aside className='sidebar' style={style}>
                 <section className="sidebar__section section-region">
                     <label>
                         <h2>Year:</h2>
@@ -218,7 +222,7 @@ const mapDispatchToProps = {
     updateSuburbDispatch: updateSuburb,
     updateCapacityDispatch: updateCapacity,
     updateBudgetDispatch: updateBudget,
-    updateDaysDispatch: updateDays, 
+    updateDaysDispatch: updateDays,
     updateQualityDispatch: updateQuality
 }
 

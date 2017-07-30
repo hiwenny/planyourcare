@@ -45,13 +45,6 @@ class HereMap extends Component {
 		this.addMarkers();
 	}
 
-	// updateSuburbOnHover = (newSuburb, e) => {
-	// 	const { dispatch } = this.props;
-	// 	console.log(newSuburb);
-	// 	console.log(e)
-	// 	return dispatch(updateSuburb(newSuburb));
-	// }
-
 	filterData = (data, { year, suburb, budget, quality, days }) => {
 		const filtered = data.filter((place) => (
 			place.YEAR === year && place.SA3_name === suburb) && place.QUALITY >= quality && place[`FEE_DAY_${days}`] <= budget);
@@ -116,6 +109,10 @@ class HereMap extends Component {
 	}
 
 	addBoundaries = () => {
+		if (this.props.scaleBy === 'NONE') {
+			return;
+		}
+
 		const { features } = mapFile;
 		let coors = []
 		features.forEach((feature) => {

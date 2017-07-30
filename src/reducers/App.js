@@ -3,7 +3,7 @@ import { regionScaleBy } from '../data/sa3_data';
 
 const initState = {
   suburb: 'Sydney Inner City',
-  scaleBy: regionScaleBy.POP_CHILD,
+  scaleBy: 'NONE',
   capacity: 1000,
   budget: 600,
   year: 2016,
