@@ -5,7 +5,7 @@
     position: absolute;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 3px;
-    min-height: calc(50% - 3.5rem);
+    min-height: calc(80% - 3.5rem);
     max-height: calc(100% - 3.5rem);
     overflow: scroll;
     left: 0;
@@ -28,7 +28,12 @@
         font-size: 0.8rem;
     }
 
+    .Select-menu,
+    .Select-menu-outer {
+        max-height: 200px;
+    }
+
     .ReactVirtualized__List {
-        height: 400px !important;
+        height: 200px !important;
     }
 }

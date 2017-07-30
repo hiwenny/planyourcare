@@ -30,3 +30,28 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+.markerPopup {
+    width: 250px;
+    h4 {
+        font-size: 1rem;
+        margin: 0;
+        margin-bottom: 0.2rem;
+    }
+
+    span {
+        font-size: 0.7rem;
+        display: block;
+    }
+}
+
+.H_ib_body {
+    background: #333;
+    padding: 0.75rem;
+}
+
+.H_ib_tail {
+    svg {
+        fill: #333;
+    }
+}

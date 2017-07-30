@@ -30,6 +30,7 @@ const locationsList = createOptionsFromJSON('SA3_name');
 const locationsFilter = createFilterOptions({ options: locationsList });
 
 const budgetsList = [
+    {value: 0, label: 0},
     {value: 50, label: 50},
     {value: 100, label: 100},
     {value: 150, label: 150},
@@ -46,6 +47,7 @@ const budgetsList = [
 const budgetsFilter = createFilterOptions({ options: locationsList });
 
 const qualityList = [
+    {value: 0, label: 0},
     {value: 1, label: 1},
     {value: 2, label: 2},
     {value: 3, label: 3},

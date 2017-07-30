@@ -81,6 +81,10 @@ class HereMap extends Component {
 				// read custom data
 				content: evt.target.getData()
 			});
+			const previousBubbles = this.ui.getBubbles();
+			previousBubbles.forEach((bubs) => {
+				this.ui.removeBubble(bubs);
+			});
 			// show info bubble
 			this.ui.addBubble(bubble);
 		}, false);
@@ -90,11 +94,11 @@ class HereMap extends Component {
 			try {
 				this.addMarkerToGroup({
 					groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
-						<div style="font-family:'PT Sans', sans-serif">
-							<span>${place.PROVIDER_NAME}</span><br />
-							<span style="font-size:1rem">Capacity: ${place.CAPACITY}</span><br />
-							<span style="font-size:1rem">Fee by day: $${place.FEE_DAY_1}</span><br />
-							<span style="font-size:1rem">Quality: ${place.QUALITY}</span><br />
+						<div class="markerPopup">
+							<h4>${place.PROVIDER_NAME}</h4>
+							<span>Capacity: ${place.CAPACITY}</span>
+							<span>Fee by day: $${place.FEE_DAY_1}</span>
+							<span>Quality: ${place.QUALITY}</span>
 						</div>`
 				});
 			} catch (e) {
@@ -216,15 +220,15 @@ class HereMap extends Component {
 }
 
 function mapStateToProps(store) {
-    return {
-        suburb: store.app.suburb,
-        capacity: store.app.capacity,
-        budget: store.app.budget,
-        scaleBy: store.app.scaleBy,
-        year: store.app.year,
-        days: store.app.days,
-        quality: store.app.quality,
-    }
+	return {
+		suburb: store.app.suburb,
+		capacity: store.app.capacity,
+		budget: store.app.budget,
+		scaleBy: store.app.scaleBy,
+		year: store.app.year,
+		days: store.app.days,
+		quality: store.app.quality,
+	}
 }
 
 HereMap.propTypes = {
