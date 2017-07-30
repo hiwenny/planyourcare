@@ -210,7 +210,7 @@ class HereMap extends Component {
 
 	render() {
 		return (
-			<div id="mapContainer" style={{ height: '100vh', width: '100%' }}>
+			<div id="mapContainer" style={{ height: 'calc(100vh - 3.5rem)', width: '100%' }}>
 			</div>
 		)
 	}
