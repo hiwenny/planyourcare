@@ -31,12 +31,12 @@ class HereMap extends Component {
 		console.log(this.props.suburb)
 	}
 
-	updateSuburbOnHover = (sampleParam, e) => {
-		const { dispatch } = this.props;
-		console.log(sampleParam);
-		console.log(e)
-		return dispatch(updateSuburb('sampleParam'));
-	}
+	// updateSuburbOnHover = (newSuburb, e) => {
+	// 	const { dispatch } = this.props;
+	// 	console.log(newSuburb);
+	// 	console.log(e)
+	// 	return dispatch(updateSuburb(newSuburb));
+	// }
 
 	addMarkers = () => {
 		const stubData = [
@@ -166,7 +166,7 @@ class HereMap extends Component {
 
 	render() {
 		return (
-			<div id="mapContainer" style={{ height: '100vh', width: '100%' }} onClick={() => this.updateSuburbOnHover('Melbourne', this)}>
+			<div id="mapContainer" style={{ height: '100vh', width: '100%' }}>
 			</div>
 		)
 	}
