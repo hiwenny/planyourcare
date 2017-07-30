@@ -52,9 +52,9 @@ class HereMap extends Component {
 	// 	return dispatch(updateSuburb(newSuburb));
 	// }
 
-	filterData = (data, { year, suburb }) => {
+	filterData = (data, { year, suburb, budget }) => {
 		const filtered = data.filter((place) => (
-			place.YEAR === year && place.SA3_name === suburb));
+			place.YEAR === year && place.SA3_name === suburb) && place.FEE_DAY_1 <= budget);
 		return filtered;
 	}
 
@@ -216,23 +216,20 @@ class HereMap extends Component {
 }
 
 function mapStateToProps(store) {
-
-	return {
-		suburb: store.app.suburb,
-		capacity: store.app.capacity,
-		budget: store.app.budget,
-		scaleBy: store.app.scaleBy,
-		year: store.app.year,
-	}
-}
-
-
-HereMap.defaultProps = {
-	suburb: 'Sydney',
+    return {
+        suburb: store.app.suburb,
+        capacity: store.app.capacity,
+        budget: store.app.budget,
+        scaleBy: store.app.scaleBy,
+        year: store.app.year,
+        days: store.app.days,
+        quality: store.app.quality,
+    }
 }
 
 HereMap.propTypes = {
 	suburb: PropTypes.string,
 	dispatch: PropTypes.func,
 }
+
 export default connect(mapStateToProps)(HereMap)

@@ -23,11 +23,27 @@ const createOptionsFromJSON = (keyName, valueName) => {
     return options;
 }
 
-const years = createOptionsFromJSON('YEAR');
-const yearsFilter = createFilterOptions({ options: years });
+const yearsList = createOptionsFromJSON('YEAR');
+const yearsFilter = createFilterOptions({ options: yearsList });
 
-const locations = createOptionsFromJSON('SA3_name');
-const locationsFilter = createFilterOptions({ options: locations });
+const locationsList = createOptionsFromJSON('SA3_name');
+const locationsFilter = createFilterOptions({ options: locationsList });
+
+const budgetsList = [
+    {value: 150, label: 150},
+    {value: 100, label: 100},
+    {value: 150, label: 150},
+    {value: 200, label: 200},
+    {value: 250, label: 250},
+    {value: 300, label: 300},
+    {value: 350, label: 350},
+    {value: 400, label: 400},
+    {value: 450, label: 450},
+    {value: 500, label: 500},
+    {value: 550, label: 550},
+    {value: 600, label: 600}
+];
+const budgetsFilter = createFilterOptions({ options: locationsList });
 
 const scaleBy = [
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
@@ -43,15 +59,27 @@ const scaleBy = [
 
 class Sidebar extends React.Component {
     handleScaleByChange = (val) => {
-        this.props.updateScaleByDispatch(val.value);
+        return this.props.updateScaleByDispatch(val.value);
     }
 
     handleYearChange = (val) => {
-        this.props.updateYearDispatch(val.value);
+        return this.props.updateYearDispatch(val.value);
     }
 
     selectLocation = (val) => {
         return this.props.updateSuburbDispatch(val.value);
+    }
+
+    handleBudgetChange = (val) => {
+        return this.props.updateBudgetDispatch(val.value);
+    }
+
+    handleDaysChange = (val) => {
+        return this.props.updateDaysDispatch(val.value);
+    }
+
+    handleQualityChange = (val) => {
+        return this.props.updateQualityDispatch(val.value);
     }
 
     logChange = (val) => {
@@ -59,7 +87,7 @@ class Sidebar extends React.Component {
     }
 
     render() {
-        const { suburb, year } = this.props;
+        const { suburb, year, budget, days, quality } = this.props;
         return (
             <aside className='sidebar'>
                 <section className='sidebar__section section-region'>
@@ -71,7 +99,7 @@ class Sidebar extends React.Component {
                             name="year"
                             value={this.props.year}
                             filterOptions={yearsFilter}
-                            options={years}
+                            options={yearsList}
                             onChange={this.handleYearChange}
                             placeholder='Select year...'
                         />
@@ -98,9 +126,22 @@ class Sidebar extends React.Component {
                             name="location"
                             value={suburb}
                             filterOptions={locationsFilter}
-                            options={locations}
+                            options={locationsList}
                             onChange={this.selectLocation}
-                            placeholder='Select locations...'
+                            placeholder='Select location...'
+                        />
+                    </label>
+                    <label>
+                        <h3>Budget:</h3>
+                        <VirtualizedSelect
+                            autoBlur={true}
+                            clearable={false}
+                            name="budget"
+                            value={budget}
+                            filterOptions={budgetsFilter}
+                            options={budgetsList}
+                            onChange={this.handleBudgetChange}
+                            placeholder='Set budget...'
                         />
                     </label>
                 </section>
