@@ -55,7 +55,6 @@ class HereMap extends Component {
 	filterData = (data, { year, suburb }) => {
 		const filtered = data.filter((place) => (
 			place.YEAR === year && place.SA3_name === suburb));
-		console.log(filtered)
 		return filtered;
 	}
 
