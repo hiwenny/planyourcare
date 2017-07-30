@@ -1,4 +1,4 @@
-$mainColor: #000;
+$mainColor: #333;
 
 .header {
     background: $mainColor;
@@ -9,6 +9,8 @@ $mainColor: #000;
     font-size: 1rem;
     height: 3.5rem;
     line-height: 3.5rem;
+    font-size: 0.8rem;
+    font-family: 'Roboto Slab', serif;
 
     > h1 {
         margin: 0;
