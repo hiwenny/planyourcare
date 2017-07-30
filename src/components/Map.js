@@ -88,8 +88,10 @@ class HereMap extends Component {
 				this.addMarkerToGroup({
 					groupTarget: group, lat: place.LATITUDE, lng: place.LONGITUDE, contentsHTML: `
 						<div style="font-family:'PT Sans', sans-serif">
-							<span>${place.PROVIDER_NAME}</span>
-							<span style="font-size:1rem">Availability: ${stub.availability}</span>
+							<span>${place.PROVIDER_NAME}</span><br />
+							<span style="font-size:1rem">Capacity: ${place.CAPACITY}</span><br />
+							<span style="font-size:1rem">Fee by day: $${place.FEE_DAY_1}</span><br />
+							<span style="font-size:1rem">Quality: ${place.QUALITY}</span><br />
 						</div>`
 				});
 			} catch (e) {
