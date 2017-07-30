@@ -45,6 +45,15 @@ const budgetsList = [
 ];
 const budgetsFilter = createFilterOptions({ options: locationsList });
 
+const qualityList = [
+    {value: 1, label: 1},
+    {value: 2, label: 2},
+    {value: 3, label: 3},
+    {value: 4, label: 4},
+    {value: 5, label: 5},
+];
+const qualityFilter = createFilterOptions({ options: qualityList });
+
 const scaleBy = [
     { value: regionScaleBy.POP_CHILD, label: 'Children Population (age 0-4)' },
     { value: regionScaleBy.AVAILIBILITY, label: 'Childcare capacity (number of kids)' },
@@ -142,6 +151,19 @@ class Sidebar extends React.Component {
                             options={budgetsList}
                             onChange={this.handleBudgetChange}
                             placeholder='Set budget...'
+                        />
+                    </label>
+                    <label>
+                        <h3>Min. Quality:</h3>
+                        <VirtualizedSelect
+                            autoBlur={true}
+                            clearable={false}
+                            name="quality"
+                            value={quality}
+                            filterOptions={qualityFilter}
+                            options={qualityList}
+                            onChange={this.handleQualityChange}
+                            placeholder='Set quality...'
                         />
                     </label>
                 </section>
