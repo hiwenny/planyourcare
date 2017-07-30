@@ -39,6 +39,9 @@ class HereMap extends Component {
 
 	componentWillUpdate(nextProps, nextState) {
 		this.filteredData = this.filterData(careProvider, nextProps);
+		if (this.group) {
+			this.map.removeObject(this.group);
+		}
 		this.addMarkers();
 	}
 
@@ -49,9 +52,9 @@ class HereMap extends Component {
 	// 	return dispatch(updateSuburb(newSuburb));
 	// }
 
-	filterData = (data, {year, suburb}) => {
+	filterData = (data, { year, suburb }) => {
 		const filtered = data.filter((place) => (
-					place.YEAR === year && place.SA3_name === suburb));
+			place.YEAR === year && place.SA3_name === suburb));
 		console.log(filtered)
 		return filtered;
 	}
@@ -70,6 +73,7 @@ class HereMap extends Component {
 			{ availability: 69 }
 		];
 		const group = new window.H.map.Group();
+		this.group = group
 		this.map.addObject(group);
 
 		// add 'tap' event listener, that opens info bubble, to the group
@@ -160,8 +164,9 @@ class HereMap extends Component {
 			let percentage = sa3ByRegionYear[key] ?
 				getScale01(sa3ByRegionYear[key][this.props.scaleBy]) :
 				0
-				
-			if (this.props.scaleBy === regionScaleBy.FEE_DAY) {
+
+			if (this.props.scaleBy === regionScaleBy.FEE_DAY ||
+				this.props.scaleBy === regionScaleBy.UNPAID_CHILDCARE_RATIO) {
 				percentage = 1 - percentage;
 			}
 
@@ -211,13 +216,13 @@ class HereMap extends Component {
 
 function mapStateToProps(store) {
 
-  return {
-    suburb: store.app.suburb,
-    capacity: store.app.capacity,
-    budget: store.app.budget,
-    scaleBy: store.app.scaleBy,
-	year: store.app.year,
-  }
+	return {
+		suburb: store.app.suburb,
+		capacity: store.app.capacity,
+		budget: store.app.budget,
+		scaleBy: store.app.scaleBy,
+		year: store.app.year,
+	}
 }
 
 
