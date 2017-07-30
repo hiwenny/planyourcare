@@ -4,7 +4,7 @@ planyourcare.tech
 
 Project Description
 ===================
-We are aiming to understand ideal locations for childcare based ideal locations (presented currently at SA3 level). We present this analysis as an interactive map for users to interrogate the underlying data. The audience for this data includes, parents understanding vacancies and prices, childcare providers to review population forecasts and existing prices, goverment to understand and project the effect of the implementation of Child Care Benefit in 1 July 2018 and proposed State Environmental Planning Policy changes.
+We are aiming to understand ideal locations for childcare based ideal locations (presented currently at SA3 level). We present this analysis as an interactive map for users to interrogate the underlying data. The audience for this prjoect includes, parents understanding vacancies and prices (we include a budget calculator, locality search, quality metrics), childcare providers to review population forecasts and existing prices, goverment to understand and project the effect of the implementation of Child Care Benefit in 1 July 2018 and proposed State Environmental Planning Policy changes.
 
 Users can project into the future (up to 20 years) using various models from the ABS and private sector (Australian Childcare Alliance/Shaw Partners) to help planning. 
 
