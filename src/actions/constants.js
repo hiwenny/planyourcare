@@ -1,1 +1,1 @@
-export const SAMPLE_ACTION = 'SAMPLE_ACTION'
+export const UPDATE_SUBURB = 'UPDATE_SUBURB';

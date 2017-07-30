@@ -1,8 +1,8 @@
 import * as actionTypes from './constants'
 
-export function sampleAction(payload) {
+export function updateSuburb(suburb) {
   return {
-    type: actionTypes.SAMPLE_ACTION,
-    samplePayload: payload
+    type: actionTypes.UPDATE_SUBURB,
+    suburb: suburb
   }
 }

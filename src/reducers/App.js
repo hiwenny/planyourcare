@@ -1,14 +1,14 @@
 import * as types from '../actions/constants'
 
 const initState = {
-  sampleState: 'click on any buttons to change the displayed value',
+  suburb: 'Sydney',
 }
 
 const app = (state = initState, action) => {
   switch (action.type) {
-    case types.SAMPLE_ACTION: {
+    case types.UPDATE_SUBURB: {
       return {
-        ...state, sampleState: action.samplePayload
+        ...state, suburb: action.suburb
       }
     }
     default:

@@ -1,5 +1,5 @@
-import { sampleAction } from 'app';
+import { updateSuburb } from 'app';
 
 export {
-    sampleAction
+    updateSuburb
 }

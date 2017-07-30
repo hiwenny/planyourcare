@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
+import { updateSuburb } from '../actions/app';
 import interpolate from 'color-interpolate';
 import mapFile from '../data/nsw2_optimized2.json';
 // import mapFile from '../data/nsw2_opt1.json';
 import careProvider from '../data/careProvider.json';
 
-export default class HereMap extends Component {
+class HereMap extends Component {
 	componentDidMount() {
 		this.initializeCredential();
 
@@ -25,6 +28,14 @@ export default class HereMap extends Component {
 
 		this.addBoundaries();
 		this.addMarkers();
+		console.log(this.props.suburb)
+	}
+
+	updateSuburbOnHover = (sampleParam, e) => {
+		const { dispatch } = this.props;
+		console.log(sampleParam);
+		console.log(e)
+		return dispatch(updateSuburb('sampleParam'));
 	}
 
 	addMarkers = () => {
@@ -155,8 +166,25 @@ export default class HereMap extends Component {
 
 	render() {
 		return (
-			<div id="mapContainer" style={{ height: '100vh', width: '100%' }}>
+			<div id="mapContainer" style={{ height: '100vh', width: '100%' }} onClick={() => this.updateSuburbOnHover('Melbourne', this)}>
 			</div>
 		)
 	}
 }
+
+function mapStateToProps(store) {
+  return {
+    suburb: store.app.suburb,
+  }
+}
+
+
+HereMap.defaultProps = {
+  suburb: 'Sydney',
+}
+
+HereMap.propTypes = {
+  suburb: PropTypes.string,
+  dispatch: PropTypes.func,
+}
+export default connect(mapStateToProps)(HereMap)
