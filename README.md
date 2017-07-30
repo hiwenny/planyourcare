@@ -1,13 +1,10 @@
-### Instructions
-A boilerplate created with react-create-app with redux and scss installed.
-To start with, install dependencies by running:
-```
-npm install
-```
+Project for Govhack Australia 2017
 
-To run on development server:
-```
-npm start
-```
+Datasets Used
 
-The site is accessible on `http://localhost:3000/`
+* Census - ABS
+  1. Income
+  2. Unpaid Child Care
+* Early Childhood Education and Care Provider Locations
+* 4402.0 - Childhood Education and Care, Australia, June 2014 - ABS
+* TBC
