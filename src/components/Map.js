@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import interpolate from 'color-interpolate';
-// import mapFile from './mapFile.json';
-// import mapFile from '../data/nsw2_optimized.json';
-import mapFile from '../data/nsw2_opt1.json';
+import mapFile from '../data/nsw2_optimized2.json';
+// import mapFile from '../data/nsw2_opt1.json';
 import careProvider from '../data/careProvider.json';
 
 export default class HereMap extends Component {
@@ -117,7 +116,7 @@ export default class HereMap extends Component {
 				return
 			}
 
-			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(120, 120, 120, 0.5)']);
+			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)']);
 			this.addBoundary(coordPairs, colormap(index / coors.length))
 		})
 	}
@@ -156,7 +155,7 @@ export default class HereMap extends Component {
 
 	render() {
 		return (
-			<div id="mapContainer" style={{ height: '100vh', width: '100vw' }}>
+			<div id="mapContainer" style={{ height: '100vh', width: '100%' }}>
 			</div>
 		)
 	}

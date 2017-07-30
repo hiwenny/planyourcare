@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Header from './components/Header'
 import HereMap from './components/Map'
+import Sidebar from './components/Sidebar'
 import { sampleAction } from './actions/app'
 import './scss/index.scss'
 
@@ -20,6 +21,7 @@ class App extends Component {
       <div className='container'>
         <Header />
         <main className='content'>
+          <Sidebar />
           <HereMap />
         </main>
       </div>
