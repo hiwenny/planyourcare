@@ -1,7 +1,7 @@
 import * as types from '../actions/constants'
 
 const initState = {
-  suburb: 'Sydney',
+  suburb: 'Sydney Inner City',
   capacity: 0,
   budget: 0,
   year: 2016

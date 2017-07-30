@@ -33,6 +33,7 @@ class HereMap extends Component {
 
 	componentWillUpdate(nextProps, nextState) {
 		this.filteredData = this.filterData(careProvider, nextProps);
+		this.addMarkers();
 	}
 
 	// updateSuburbOnHover = (newSuburb, e) => {

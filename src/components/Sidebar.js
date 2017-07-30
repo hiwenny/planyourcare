@@ -129,7 +129,7 @@ function mapStateToProps(store) {
 
 
 Sidebar.defaultProps = {
-  suburb: 'Sydney',
+  suburb: 'Sydney Inner City',
   capacity: 0,
   budget: 0,
   year: 2016
