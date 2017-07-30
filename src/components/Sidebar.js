@@ -44,19 +44,27 @@ const scaleBy = [
     { value: regionScaleBy.INCOME_DAY, label: 'Household Income per day' },
 ];
 
-function logChange(val) {
-    console.log("Selected: " + JSON.stringify(val));
-}
 
 class Sidebar extends React.Component {
-    componentDidMount() {
-        const { suburb, capacity, year, budget } = this.props;
+    componentWillUpdate(currProps, nextProps) {
+        const { suburb, capacity, year, budget } = currProps;
         console.log('sub '+suburb)
         console.log('cap '+capacity)
         console.log('yr '+year)
         console.log('budget '+budget)
     }
+
+
+    selectYear = (val) => {
+        return this.props.dispatch(updateYear(val.value));
+    }
+
+    selectLocation = (val) => {
+        return this.props.dispatch(updateSuburb(val.value));
+    }
+    
     render() {
+        const { suburb, year } = this.props;
         return (
             <aside className='sidebar'>
                 <section className='sidebar__section section-region'>
@@ -66,10 +74,10 @@ class Sidebar extends React.Component {
                             autoBlur={true}
                             clearable={false}
                             name="year"
-                            value={'one'}
+                            value={year}
                             filterOptions={yearsFilter}
                             options={years}
-                            onChange={logChange}
+                            onChange={this.selectYear}
                             placeholder='Select year...'
                         />
                     </label>
@@ -81,22 +89,22 @@ class Sidebar extends React.Component {
                             name="scaleby"
                             value={'one'}
                             options={scaleBy}
-                            onChange={logChange}
+                            onChange={this.logChange}
                             placeholder='Select scale by...'
                         />
                     </label>
                 </section>
                 <section className='sidebar__section section-childcare'>
                     <label>
-                        <h3>Locations:</h3>
+                        <h3>Location:</h3>
                         <VirtualizedSelect
                             autoBlur={true}
                             clearable={false}
-                            name="year"
-                            value={'one'}
+                            name="location"
+                            value={suburb}
                             filterOptions={locationsFilter}
                             options={locations}
-                            onChange={logChange}
+                            onChange={this.selectLocation}
                             placeholder='Select locations...'
                         />
                     </label>
@@ -109,22 +117,25 @@ class Sidebar extends React.Component {
 function mapStateToProps(store) {
   return {
     suburb: store.app.suburb,
+    capacity: store.app.capacity,
+    budget: store.app.budget,
+    year: store.app.year
   }
 }
 
 
 Sidebar.defaultProps = {
   suburb: 'Sydney',
-  capacity: null,
-  budget: null,
-  year: null
+  capacity: 0,
+  budget: 0,
+  year: 2016
 }
 
 Sidebar.propTypes = {
   suburb: PropTypes.string,
-  capacity: PropTypes.string,
-  budget: PropTypes.string,
-  year: PropTypes.string,
+  capacity: PropTypes.number,
+  budget: PropTypes.number,
+  year: PropTypes.number,
   dispatch: PropTypes.func,
 }
 export default connect(mapStateToProps)(Sidebar)
