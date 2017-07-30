@@ -6,8 +6,14 @@ import interpolate from 'color-interpolate';
 import mapFile from '../data/nsw2_optimized2.json';
 // import mapFile from '../data/nsw2_opt1.json';
 import careProvider from '../data/careProvider.json';
+import { sa3ByRegion, scaleSmallestLargest, regionScaleBy } from '../data/sa3_data';
 
 class HereMap extends Component {
+	constructor() {
+		super()
+		this.boundaryObjects = []
+	}
+
 	componentDidMount() {
 		this.initializeCredential();
 
@@ -81,6 +87,14 @@ class HereMap extends Component {
 		});
 	}
 
+	componentDidUpdate = (newProps) => {
+		this.boundaryObjects.forEach(x => {
+			this.map.removeObject(x)
+		})
+		this.boundaryObjects = []
+		this.addBoundaries()
+	}
+
 	addBoundaries = () => {
 		const { features } = mapFile;
 		let coors = []
@@ -94,25 +108,51 @@ class HereMap extends Component {
 				return
 			}
 
-			// console.log('PROPERTIES', properties.SA3_NAME16);
+			console.log('PROPERTIES', properties.SA3_NAME16);
 			if (type === 'Polygon') {
 				const c = coordinates && coordinates.length && coordinates[0];
-				coors.push(c);
+				const pushed = {
+					region: properties.SA3_NAME16,
+					coordPairs: c,
+				}
+				coors.push(pushed);
 			} else if (type === 'MultiPolygon') {
 				coordinates.forEach((c2) => {
 					const flatten = [].concat(...c2)
-					coors.push(flatten)
+					const pushed = {
+						region: properties.SA3_NAME16,
+						coordPairs: flatten,
+					}
+					coors.push(pushed)
 				})
 			}
 		})
 
-		coors.forEach((coordPairs, index) => {
+		const currSmallestLargestObj = scaleSmallestLargest[this.props.scaleBy]
+		const getScale01 = (number) => {
+			const { smallest, largest } = currSmallestLargestObj;
+			return (number - smallest) / (largest - smallest);
+		}
+
+		coors.forEach((coordPairsRegionObject, index) => {
+			const { region, coordPairs } = coordPairsRegionObject;
 			if (!coordPairs) {
 				return
 			}
 
 			const colormap = interpolate(['rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)']);
-			this.addBoundary(coordPairs, colormap(index / coors.length))
+			if (!sa3ByRegion[region]) return
+
+			let percentage = sa3ByRegion[region] ?
+				getScale01(sa3ByRegion[region][this.props.scaleBy]) :
+				0
+				
+			if (this.props.scaleBy === regionScaleBy.FEE_DAY) {
+				percentage = 1 - percentage;
+			}
+
+			console.log('PRECENTAGEEE', percentage);
+			this.addBoundary(coordPairs, colormap(percentage))
 		})
 	}
 
@@ -120,19 +160,19 @@ class HereMap extends Component {
 		var geoStrip = new window.H.geo.Strip();
 
 		coordPairs.forEach((pair) => {
-			// console.log('ADDING COORDPAIRS', pair);
 			geoStrip.pushLatLngAlt(pair[1], pair[0], 0)
 		})
 
-		this.map.addObject(
-			new window.H.map.Polygon(geoStrip, {
-				style: {
-					fillColor: backgroundColor,
-					strokeColor: '#fff',
-					lineWidth: 1
-				}
-			})
-		);
+		const obj = new window.H.map.Polygon(geoStrip, {
+			style: {
+				fillColor: backgroundColor,
+				strokeColor: '#fff',
+				lineWidth: 1
+			}
+		});
+
+		this.boundaryObjects.push(obj)
+		this.map.addObject(obj);
 	}
 
 	initializeCredential = () => {
@@ -157,18 +197,19 @@ class HereMap extends Component {
 }
 
 function mapStateToProps(store) {
-  return {
-    suburb: store.app.suburb,
-  }
+	return {
+		suburb: store.app.suburb,
+		scaleBy: store.app.scaleBy,
+	}
 }
 
 
 HereMap.defaultProps = {
-  suburb: 'Sydney',
+	suburb: 'Sydney',
 }
 
 HereMap.propTypes = {
-  suburb: PropTypes.string,
-  dispatch: PropTypes.func,
+	suburb: PropTypes.string,
+	dispatch: PropTypes.func,
 }
 export default connect(mapStateToProps)(HereMap)

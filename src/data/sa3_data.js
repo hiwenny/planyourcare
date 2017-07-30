@@ -22,6 +22,14 @@ Object.values(regionScaleBy).forEach((val) => {
     scaleSmallestLargest[val] = createSmallestLargest(numbers)
 })
 
+const sa3ByRegion = {};
+
+SA3.forEach((x) => {
+    sa3ByRegion[x['SA3_name']] = x
+});
+
 export {
     regionScaleBy,
+    sa3ByRegion,
+    scaleSmallestLargest,
 }
