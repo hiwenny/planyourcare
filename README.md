@@ -28,3 +28,4 @@ https://datapacks.censusdata.abs.gov.au/datapacks/
   3. Various GSP/TCP data sets
 * Early Childhood Education and Care Provider Locations https://data.nsw.gov.au/data/dataset/c41c950f-043c-45ea-bf84-22d8037b74bb/resource/80c2ccfc-971d-43cd-8ee6-e7cc4f15e989/download/Early-Childhood-Education-and-Care-Provider-Locations.xlsx
 * GovHackATO (ATO) http://data.gov.au/dataset/ad383be7-4666-4bbb-bfd0-9fffb374beff/resource/1f187a2d-df9d-4e1e-871e-2bfcced4a5e4/download/atoabsgovhack2017.xlsx
+* Google Places API - (reviews of locations) - https://developers.google.com/places/web-service/details
