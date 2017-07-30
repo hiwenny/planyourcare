@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { updateScaleBy, updateYear } from '../actions/app';
+import { updateSuburb, updateCapacity, updateBudget, updateScaleBy, updateYear } from '../actions/app';
 import '../scss/sidebar.scss';
 import Select from 'react-select';
 import VirtualizedSelect from 'react-virtualized-select';
@@ -40,9 +40,6 @@ const scaleBy = [
     { value: regionScaleBy.UNPAID_CHILDCARE, label: 'Number of children not in childcare' },
 ];
 
-function logChange(val) {
-    console.log("Selected: " + JSON.stringify(val));
-}
 
 class Sidebar extends React.Component {
     handleScaleByChange = (val) => {
@@ -53,7 +50,16 @@ class Sidebar extends React.Component {
         this.props.updateYearDispatch(val.value);
     }
 
+    selectLocation = (val) => {
+        return this.props.updateSuburbDispatch(val.value);
+    }
+
+    logChange = (val) => {
+        console.log(val)
+    }
+
     render() {
+        const { suburb, year } = this.props;
         return (
             <aside className='sidebar'>
                 <section className='sidebar__section section-region'>
@@ -85,15 +91,15 @@ class Sidebar extends React.Component {
                 </section>
                 <section className='sidebar__section section-childcare'>
                     <label>
-                        <h3>Locations:</h3>
+                        <h3>Location:</h3>
                         <VirtualizedSelect
                             autoBlur={true}
                             clearable={false}
-                            name="year"
-                            value={'one'}
+                            name="location"
+                            value={suburb}
                             filterOptions={locationsFilter}
                             options={locations}
-                            onChange={logChange}
+                            onChange={this.selectLocation}
                             placeholder='Select locations...'
                         />
                     </label>
@@ -104,23 +110,33 @@ class Sidebar extends React.Component {
 }
 
 function mapStateToProps(store) {
-  return {
-      scaleBy: store.app.scaleBy,
-      year: store.app.year,
-  }
+    return {
+        suburb: store.app.suburb,
+        capacity: store.app.capacity,
+        budget: store.app.budget,
+        scaleBy: store.app.scaleBy,
+        year: store.app.year
+    }
 }
 
 const mapDispatchToProps = {
     updateScaleByDispatch: updateScaleBy,
     updateYearDispatch: updateYear,
+    updateSuburbDispatch: updateSuburb,
 }
 
 Sidebar.defaultProps = {
-//   suburb: 'Sydney',
+    suburb: 'Sydney Inner City',
+    capacity: 0,
+    budget: 0,
+    year: 2016
 }
 
 Sidebar.propTypes = {
-//   suburb: PropTypes.string,
-  dispatch: PropTypes.func,
+    suburb: PropTypes.string,
+    capacity: PropTypes.number,
+    budget: PropTypes.number,
+    year: PropTypes.number,
+    dispatch: PropTypes.func,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

@@ -5,7 +5,7 @@ import { updateSuburb } from '../actions/app';
 import interpolate from 'color-interpolate';
 import mapFile from '../data/nsw2_optimized2.json';
 // import mapFile from '../data/nsw2_opt1.json';
-import careProvider from '../data/careProvider.json';
+import careProvider from '../data/CHILDCARE_DATA.json';
 import { sa3ByRegionYear, scaleSmallestLargest, regionScaleBy } from '../data/sa3_data';
 
 class HereMap extends Component {
@@ -15,6 +15,7 @@ class HereMap extends Component {
 	}
 
 	componentDidMount() {
+		this.filteredData = this.filterData(careProvider, this.props);
 		this.initializeCredential();
 
 		// Obtain the default map types from the platform object:
@@ -34,7 +35,11 @@ class HereMap extends Component {
 
 		this.addBoundaries();
 		this.addMarkers();
-		// console.log(this.props.suburb)
+	}
+
+	componentWillUpdate(nextProps, nextState) {
+		this.filteredData = this.filterData(careProvider, nextProps);
+		this.addMarkers();
 	}
 
 	// updateSuburbOnHover = (newSuburb, e) => {
@@ -43,6 +48,13 @@ class HereMap extends Component {
 	// 	console.log(e)
 	// 	return dispatch(updateSuburb(newSuburb));
 	// }
+
+	filterData = (data, {year, suburb}) => {
+		const filtered = data.filter((place) => (
+					place.YEAR === year && place.SA3_name === suburb));
+		console.log(filtered)
+		return filtered;
+	}
 
 	addMarkers = () => {
 		const stubData = [
@@ -56,7 +68,6 @@ class HereMap extends Component {
 			{ availability: 62 },
 			{ availability: 53 },
 			{ availability: 69 }
-
 		];
 		const group = new window.H.map.Group();
 		this.map.addObject(group);
@@ -71,7 +82,7 @@ class HereMap extends Component {
 			this.ui.addBubble(bubble);
 		}, false);
 
-		careProvider.map((place) => {
+		this.filteredData.map((place) => {
 			const stub = stubData[Math.floor(Math.random() * 10)];
 			try {
 				this.addMarkerToGroup({
@@ -199,11 +210,14 @@ class HereMap extends Component {
 }
 
 function mapStateToProps(store) {
-	return {
-		suburb: store.app.suburb,
-		scaleBy: store.app.scaleBy,
-		year: store.app.year,
-	}
+
+  return {
+    suburb: store.app.suburb,
+    capacity: store.app.capacity,
+    budget: store.app.budget,
+    scaleBy: store.app.scaleBy,
+	year: store.app.year,
+  }
 }
 
 

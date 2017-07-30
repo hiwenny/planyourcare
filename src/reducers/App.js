@@ -2,9 +2,11 @@ import * as types from '../actions/constants'
 import { regionScaleBy } from '../data/sa3_data';
 
 const initState = {
-  suburb: 'Sydney',
+  suburb: 'Sydney Inner City',
   scaleBy: regionScaleBy.POP_CHILD,
-  year: 2016,
+  capacity: 0,
+  budget: 0,
+  year: 2016
 }
 
 const app = (state = initState, action) => {
@@ -19,6 +21,16 @@ const app = (state = initState, action) => {
         ...state, scaleBy: action.scaleBy
       }
     }
+    case types.UPDATE_CAPACITY: {
+      return {
+        ...state, capacity: action.capacity
+      }
+    }
+    case types.UPDATE_BUDGET: {
+      return {
+        ...state, budget: action.budget
+      }
+    }    
     case types.UPDATE_YEAR: {
       return {
         ...state, year: action.year
