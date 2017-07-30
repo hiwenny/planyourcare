@@ -9,6 +9,9 @@
 # production
 /build
 
+# internal utils
+/src/utilities/
+
 # misc
 .DS_Store
 .env.local
